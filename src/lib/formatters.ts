@@ -190,25 +190,50 @@ export async function minifyCode(code: string, language: string): Promise<string
     if (!code.trim()) return code;
 
     try {
-        const response = await fetch("/api/minify", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ code, language })
-        });
+        switch (language) {
+            case "json":
+                return JSON.stringify(JSON.parse(code));
 
-        if (!response.ok) {
-            throw new Error(`API error: ${response.statusText}`);
+            case "javascript":
+            case "typescript":
+            case "babel":
+            case "react":
+                // Client-side JS minification (removes comments and collapses whitespace)
+                return code
+                    .replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/gm, '$1') // Remove comments
+                    .replace(/\s+/g, ' ') // Collapse whitespace
+                    .replace(/ ?([={};,<>():?&|!+*/-]) ?/g, '$1') // Remove spaces around operators
+                    .trim();
+
+            case "css":
+            case "scss":
+            case "less":
+                // Client-side CSS minification
+                return code
+                    .replace(/\/\*[\s\S]*?\*\//g, '') // Remove comments
+                    .replace(/\s+/g, ' ') // Collapse whitespace
+                    .replace(/ ?([{} :;,]) ?/g, '$1') // Remove spaces around delimiters
+                    .replace(/;}/g, '}') // Remove trailing semicolon
+                    .trim();
+
+            case "html":
+            case "xml":
+            case "xaml":
+            case "svg":
+                // Client-side HTML/XML minification
+                return code
+                    .replace(/<!--[\s\S]*?-->/g, '') // Remove comments
+                    .replace(/>\s+</g, '><') // Remove whitespace between tags
+                    .replace(/\s{2,}/g, ' ') // Collapse other whitespace
+                    .trim();
+
+            default:
+                // Generic fallback
+                return code.replace(/\n/g, '').replace(/\s{2,}/g, ' ').trim();
         }
-
-        const data = await response.json();
-        if (data.error) {
-            throw new Error(data.error);
-        }
-
-        return data.minified;
     } catch (e) {
-        console.error(`Minification network error for ${language}:`, e);
-        // Fallback to old regex if API call fails
+        console.error(`Minification error for ${language}:`, e);
+        // Silent fallback to basic minification
         return code.replace(/\n/g, '').replace(/\s{2,}/g, ' ').trim();
     }
 }
