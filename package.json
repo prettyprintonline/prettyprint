@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "pages-build": "npx @cloudflare/next-on-pages@1 && rm -rf .vercel/output/static/_worker.js/nop-build-log.json",
     "start": "next start",
     "lint": "eslint"
   },
