@@ -4,6 +4,8 @@ import postcss from "postcss";
 import cssnano from "cssnano";
 import { minify as htmlMinify } from "html-minifier-terser";
 
+export const runtime = 'edge';
+
 export async function POST(request: Request) {
     try {
         const body = await request.json();
