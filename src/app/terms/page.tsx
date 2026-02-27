@@ -1,0 +1,79 @@
+import Link from "next/link";
+import { Scale, CheckCircle, AlertTriangle, HelpCircle } from "lucide-react";
+
+export default function TermsPage() {
+    return (
+        <main className="min-h-screen bg-background pt-16">
+            <div className="container px-4 py-20 max-w-4xl mx-auto">
+                <header className="mb-16 text-center">
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 text-blue-500 text-xs font-bold border border-blue-500/20 uppercase tracking-widest mb-6">
+                        Usage Guidelines
+                    </div>
+                    <h1 className="text-4xl md:text-5xl font-black tracking-tight mb-6">Terms of Service</h1>
+                    <p className="text-xl text-muted-foreground">
+                        By using Pretty Print, you agree to these simple terms designed to keep the service free and fast for everyone.
+                    </p>
+                </header>
+
+                <div className="prose prose-neutral dark:prose-invert max-w-none space-y-12">
+                    <section>
+                        <div className="flex items-center gap-4 mb-4">
+                            <div className="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center border border-primary/10">
+                                <CheckCircle className="w-5 h-5 text-primary" />
+                            </div>
+                            <h2 className="text-2xl font-bold m-0">1. Acceptance of Terms</h2>
+                        </div>
+                        <p className="text-lg text-muted-foreground leading-relaxed">
+                            Pretty Print provides a web-based code formatting service. By accessing our website, you acknowledge that you have read, understood, and agree to be bound by these terms. This service is provided "as is" without warranty of any kind.
+                        </p>
+                    </section>
+
+                    <section>
+                        <div className="flex items-center gap-4 mb-4">
+                            <div className="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center border border-primary/10">
+                                <Scale className="w-5 h-5 text-primary" />
+                            </div>
+                            <h2 className="text-2xl font-bold m-0">2. Permitted Use</h2>
+                        </div>
+                        <p className="text-lg text-muted-foreground leading-relaxed">
+                            You are free to use Pretty Print for personal, educational, or commercial purposes. You may format as much code as you need. However, you agree not to:
+                        </p>
+                        <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+                            <li>Use the service for any illegal activities or to process malicious code.</li>
+                            <li>Attempt to scrape, heavy-load, or DDoS the platform services.</li>
+                            <li>Bypass any security measures or rate limits if implemented.</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <div className="flex items-center gap-4 mb-4">
+                            <div className="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center border border-primary/10">
+                                <AlertTriangle className="w-5 h-5 text-primary" />
+                            </div>
+                            <h2 className="text-2xl font-bold m-0">3. Limitation of Liability</h2>
+                        </div>
+                        <p className="text-lg text-muted-foreground leading-relaxed">
+                            While we strive for 100% accuracy in our formatting algorithms, Pretty Print is not responsible for any bugs, data loss, or system failures that may occur after you use the formatted output in your own projects. Always verify critical code before deployment.
+                        </p>
+                    </section>
+
+                    <section className="bg-card border rounded-3xl p-8 shadow-sm">
+                        <div className="flex items-center gap-4 mb-4">
+                            <HelpCircle className="w-6 h-6 text-primary" />
+                            <h2 className="text-2xl font-bold m-0">4. Intellectual Property</h2>
+                        </div>
+                        <p className="text-muted-foreground leading-relaxed mb-0">
+                            Pretty Print does not claim any ownership over the code you paste or format. The code remains your intellectual property. Our website's design, logo, and custom logic remain the property of the Pretty Print developers.
+                        </p>
+                    </section>
+                </div>
+
+                <footer className="mt-20 pt-10 border-t text-center">
+                    <Link href="/" className="text-primary font-bold hover:underline">
+                        Back to Toolbase
+                    </Link>
+                </footer>
+            </div>
+        </main>
+    );
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/" xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+  <ShortName>Pretty Print</ShortName>
+  <Description>Search Pretty Print code formatters</Description>
+  <InputEncoding>UTF-8</InputEncoding>
+  <Image width="32" height="32" type="image/svg+xml">https://prettyprint.online/favicon.svg</Image>
+  <Url type="text/html" template="https://prettyprint.online/?q={searchTerms}"/>
+  <moz:SearchForm>https://prettyprint.online/</moz:SearchForm>
+</OpenSearchDescription>
