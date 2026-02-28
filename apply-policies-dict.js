@@ -401,7 +401,7 @@ for (const locale of locales) {
             fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
             console.log(`Updated real Policy & Tool translations for ${locale}`);
         } catch (e) {
-            console.error(`Error parsing JSON for ${locale}`, e);
+            console.error('Error parsing JSON for locale:', locale, e);
         }
     } else {
         console.warn(`File not found: ${filePath}`);
