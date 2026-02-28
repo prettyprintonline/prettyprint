@@ -1,7 +1,5 @@
-import { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { LanguageEditorClient } from "./client";
-import { getLanguageSEO, LANGUAGES_SEO, SITE_CONFIG } from "@/lib/seo-data";
+import { LanguageEditorClient } from "./tool-client";
+import { LanguageSEO, SITE_CONFIG } from "@/lib/seo-data";
 import { WebApplicationJsonLd, FAQJsonLd, BreadcrumbJsonLd } from "@/components/json-ld";
 import {
     Accordion,
@@ -11,56 +9,30 @@ import {
 } from "@/components/ui/accordion";
 
 type Props = {
-    params: Promise<{ language: string }>;
+    config: LanguageSEO;
+    dict?: any;
 };
 
-/* ── Static Generation for all 25 language pages ── */
-export async function generateStaticParams() {
-    return LANGUAGES_SEO.map((lang) => ({
-        language: lang.id,
-    }));
-}
+export default function ToolPage({ config: seo, dict }: Props) {
+    const lang = seo.id;
 
-/* ── Dynamic SEO Metadata ── */
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-    const language = (await params).language;
-    const seo = getLanguageSEO(language);
-
-    if (!seo) {
-        return {
-            title: "Page Not Found",
-        };
-    }
-
-    return {
-        title: seo.title,
-        description: seo.description,
-        keywords: seo.keywords,
-        alternates: {
-            canonical: `${SITE_CONFIG.domain}/${encodeURIComponent(seo.id)}`,
-        },
-        openGraph: {
-            title: seo.title,
-            description: seo.description,
-            url: `${SITE_CONFIG.domain}/${encodeURIComponent(seo.id)}`,
-            type: "website",
-        },
-        twitter: {
-            card: "summary_large_image",
-            title: seo.title,
-            description: seo.description,
-        },
+    const t = dict?.tool || {
+        whatIs: "What is",
+        howTo: "How to Pretty Print",
+        online: "Online",
+        faqs: "Formatter — Frequently Asked Questions",
+        p1_1: "is a free online tool that lets you instantly format, beautify, and indent your",
+        p1_2: "code directly in your browser. No signup, no installation, no server uploads — your code stays 100% private. Simply paste your unformatted",
+        p1_3: "code, click \"Format Code\", and get clean, readable output in seconds.",
+        li1: "Navigate to the",
+        li1_2: "formatter page (you're already here!).",
+        li2: "Paste your messy or minified",
+        li2_2: "code into the editor above.",
+        li3: "Click the",
+        li3_1: '"Format Code"',
+        li3_2: "button to instantly pretty print your code.",
+        li4: "Copy the formatted result to your clipboard or download it as a file."
     };
-}
-
-/* ── Page Component ── */
-export default async function LanguagePage({ params }: Props) {
-    const lang = (await params).language;
-    const seo = getLanguageSEO(lang);
-
-    if (!seo) {
-        notFound();
-    }
 
     return (
         <>
@@ -83,35 +55,30 @@ export default async function LanguagePage({ params }: Props) {
                     {/* What is this tool */}
                     <div className="max-w-3xl mx-auto mb-12">
                         <h2 className="text-2xl font-bold mb-4">
-                            What is {seo.h1}?
+                            {t.whatIs} {seo.h1}?
                         </h2>
                         <p className="text-muted-foreground leading-relaxed">
-                            {seo.h1} is a free online tool that lets you instantly format,
-                            beautify, and indent your {seo.name} code directly in your
-                            browser. No signup, no installation, no server uploads — your
-                            code stays 100% private. Simply paste your unformatted{" "}
-                            {seo.name} code, click &quot;Format Code&quot;, and get clean,
-                            readable output in seconds.
+                            {seo.h1} {t.p1_1} {seo.name} {t.p1_2} {seo.name} {t.p1_3}
                         </p>
                     </div>
 
                     {/* How to use */}
                     <div className="max-w-3xl mx-auto mb-12">
                         <h2 className="text-2xl font-bold mb-4">
-                            How to Pretty Print {seo.name} Online
+                            {t.howTo} {seo.name} {t.online}
                         </h2>
                         <ol className="list-decimal list-inside space-y-2 text-muted-foreground">
-                            <li>Navigate to the <strong>{seo.name} formatter</strong> page (you&apos;re already here!).</li>
-                            <li>Paste your messy or minified {seo.name} code into the editor above.</li>
-                            <li>Click the <strong>&quot;Format Code&quot;</strong> button to instantly pretty print your code.</li>
-                            <li>Copy the formatted result to your clipboard or download it as a file.</li>
+                            <li>{t.li1} <strong>{seo.name} {t.li1_2}</strong></li>
+                            <li>{t.li2} {seo.name} {t.li2_2}</li>
+                            <li>{t.li3} <strong>{t.li3_1}</strong> {t.li3_2}</li>
+                            <li>{t.li4}</li>
                         </ol>
                     </div>
 
                     {/* FAQ Accordion */}
                     <div className="max-w-3xl mx-auto">
                         <h2 className="text-2xl font-bold mb-6">
-                            {seo.name} Formatter — Frequently Asked Questions
+                            {seo.name} {t.faqs}
                         </h2>
                         <Accordion type="single" collapsible className="w-full">
                             {seo.faqs.map((faq, i) => (
@@ -131,3 +98,4 @@ export default async function LanguagePage({ params }: Props) {
         </>
     );
 }
+

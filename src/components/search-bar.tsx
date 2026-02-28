@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Search } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { getLocalizedHref } from "@/lib/locale-navigation";
 
 interface LanguageItem {
     id: string;
@@ -12,9 +13,11 @@ interface LanguageItem {
 
 interface SearchBarProps {
     languages: LanguageItem[];
+    locale?: string;
+    dict?: any;
 }
 
-export function SearchBar({ languages }: SearchBarProps) {
+export function SearchBar({ languages, locale, dict }: SearchBarProps) {
     const [query, setQuery] = useState("");
     const [isOpen, setIsOpen] = useState(false);
     const inputRef = useRef<HTMLInputElement>(null);
@@ -56,7 +59,7 @@ export function SearchBar({ languages }: SearchBarProps) {
     const handleSelect = (id: string) => {
         setQuery("");
         setIsOpen(false);
-        router.push(`/${encodeURIComponent(id)}`);
+        router.push(getLocalizedHref(id, locale));
     };
 
     return (
@@ -66,7 +69,7 @@ export function SearchBar({ languages }: SearchBarProps) {
                 <input
                     ref={inputRef}
                     type="text"
-                    placeholder="Search for a language (e.g., JSON, SQL, Python)..."
+                    placeholder={dict?.search?.placeholder || "Search for a language (e.g., JSON, SQL, Python)..."}
                     value={query}
                     onChange={(e) => {
                         setQuery(e.target.value);
@@ -92,7 +95,7 @@ export function SearchBar({ languages }: SearchBarProps) {
                             <span className="w-7 h-7 rounded-md bg-primary/10 flex items-center justify-center text-primary text-xs font-bold border border-primary/20 shrink-0">
                                 {lang.icon}
                             </span>
-                            <span className="font-medium">{lang.name} Formatter</span>
+                            <span className="font-medium">{lang.name} {dict?.topTools?.formatterSuffix || "Formatter"}</span>
                         </button>
                     ))}
                 </div>

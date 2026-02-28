@@ -1,0 +1,191 @@
+{
+  "nav": {
+    "allFormats": "所有格式",
+    "clientSide": "仅限客户端",
+    "starGithub": "在 GitHub 上给咱们点赞"
+  },
+  "hero": {
+    "supportedLanguages": "支持 26 种语言",
+    "title1": "立即美化",
+    "title2": "任何代码",
+    "subtitle": "一个非常快速、注重隐私的开发者代码格式化工具。支持 JSON、JavaScript、HTML、CSS 和 20 多种其他语言。",
+    "popular": "热门："
+  },
+  "features": {
+    "title": "为什么选择 Pretty Print？",
+    "subtitle": "专为需要强大、私密和即时工具的现代开发者设计。",
+    "astTitle": "快如闪电的 AST",
+    "astDesc": "我们使用内置在尖端 JavaScript 解析器中的严格抽象语法树 (AST) 逻辑，跳过服务器并直接在浏览器进行渲染。",
+    "privacyTitle": "100% 客户端隐私",
+    "privacyDesc": "零数据跟踪。零远程负载。所有缩小和格式化计算都在您的浏览器内原生发生。",
+    "themeTitle": "VS Code 主题和插件",
+    "themeDesc": "通过 Monaco Editor 框架享受熟悉的 Intellisense 逻辑，以及实时波浪线语法高亮显示。"
+  },
+  "topTools": {
+    "title": "热门格式化工具",
+    "viewAll": "查看全部 26 种格式",
+    "formatterSuffix": "格式化工具"
+  },
+  "howItWorks": {
+    "title": "如何在线格式化代码",
+    "subtitle": "厌倦了凌乱的单行代码？遵循这三个简单的步骤，完全免费地美化或压缩您的代码。",
+    "step1Title": "选择语言",
+    "step1Desc": "从我们庞大的 26 种支持语言库中进行选择，从前端堆栈（HTML、React、CSS）到后端数据结构（SQL、Python、JSON）。",
+    "step2Title": "粘贴并格式化",
+    "step2Desc": "将缩小的文本块直接粘贴到左侧编辑器面板中。一旦您粘贴，我们的 AST 处理器将验证错误并立即对其进行格式化。",
+    "step3Title": "复制或压缩",
+    "step3Desc": "使用工具栏复制结构优美的文档，将其直接下载到文件扩展名，甚至逆向过程以压缩您的代码！"
+  },
+  "tool": {
+    "whatIs": "什么是",
+    "howTo": "如何在线格式化",
+    "online": "在线工具",
+    "faqs": "格式化工具 — 常见问题与解答",
+    "p1_1": "是一个可以在浏览器中即时缩进并美化",
+    "p1_2": "代码的免费工具。零服务器通信，100%安全私密。只需粘贴",
+    "p1_3": "代码，即可获得优雅直观的干净输出。",
+    "li1": "导航至在线的",
+    "li1_2": "格式化程序页面。",
+    "li2": "将丑陋或被压缩的",
+    "li2_2": "代码粘贴至上方编辑器。",
+    "li3": "点击",
+    "li3_1": "\"Format Code\"",
+    "li3_2": "按钮进行代码重构。",
+    "li4": "将已格式化的结果复制并下载。"
+  },
+  "footer": {
+    "description": "免费的在线代码格式化工具。您的代码永远不会离开您的浏览器。",
+    "home": "首页",
+    "privacy": "隐私",
+    "terms": "条款"
+  },
+  "search": {
+    "placeholder": "搜索语言（例如 JSON、SQL、Python）..."
+  },
+  "formatterCards": {
+    "json": "漂亮的打印 JSON - 瞬间格式化并美化您的数据。",
+    "javascript": "格式化和缩进 JavaScript 及 ES6+ 代码语法。",
+    "typescript": "用适当的类型对齐美化 TypeScript 文件。",
+    "react": "结构化地格式化 React JSX/TSX 组件。",
+    "html": "缩进并组织 HTML5 文档结构。",
+    "css": "通过自动缩进美化 CSS 样式表。",
+    "less": "格式化 LESS 预处理器样式表声明。",
+    "scss": "瞬间美化 SASS/SCSS 嵌套结构。",
+    "sql": "将复杂的 SQL 查询格式化为可读的行。",
+    "python": "强制执行 Python 脚本的 PEP-8 样式缩进。",
+    "java": "正确对齐 Java 类和方法大括号。",
+    "c": "使用标准 K&R 样式格式化 C 源文件。",
+    "c++": "美化 C++ 标头和实现。",
+    "c#": "遵循 Microsoft 准则格式化 C# 代码文件。",
+    "php": "缩进并美化 PHP 服务器端服务器块。",
+    "ruby": "格式化 Ruby gem 和应用程序脚本逻辑。",
+    "lua": "美化 Lua 表和逻辑功能块。",
+    "perl": "使用标准大括号对齐格式化 Perl 脚本。",
+    "xml": "缩进 XML 标记和嵌套配置数据。",
+    "xaml": "美化 XAML 标记以用于 UI 定义。",
+    "yaml": "以精确的间距规则格式化 YAML 文件。",
+    "graphql": "格式化 GraphQL 查询和架构定义。",
+    "markdown": "整理 Markdown 间距和列表项。",
+    "mdx": "格式化混合 Markdown 和 JSX 的 MDX 文件。",
+    "babel": "格式化 Babel 配置和转换文件。",
+    "angular": "美化 Angular HTML 模板和指令。"
+  },
+  "directory": {
+    "title": "完整的工具目录",
+    "subtitle": "无论您使用什么语言，我们都能解读。所有解析器均依赖于行业标准格式规则。"
+  },
+  "article": {
+    "title1": "终极免费在线",
+    "title2": "代码格式化与美化工具",
+    "subtitle": "Pretty Print 是面向开发人员的专业级解决方案。",
+    "p1": "在现代软件开发生命周期中，工程师经常与压缩的代码块进行交互。解析未格式化的文本是一项令人沮丧的工作。",
+    "p2": "我们的工具充当代码库美学的中心枢纽。使用行业标准规则立即美化源代码。",
+    "privacyWhy": "为什么隐私优先至关重要",
+    "privacyP1": "传统的工具将原始代码提交到远程服务器。这是一个严重的安全漏洞。",
+    "privacyP2": "Pretty Print 100% 在客户端处理您的代码。代码绝对不会离开您的浏览器。",
+    "techSpecs": "技术规格",
+    "tsZero": "零延迟",
+    "tsZeroDesc": "在浏览器线程中即时进行AST解析。",
+    "tsLangs": "26+ 语言",
+    "tsLangsDesc": "支持React、SQL、JSON、YAML等。",
+    "tsIDE": "IDE 框架",
+    "tsIDEDesc": "带有VS Code主题的Monaco工作区。",
+    "tsBi": "双向转换",
+    "tsBiDesc": "在美化和压缩状态之间切换。",
+    "editorEngine": "编辑器引擎",
+    "privacyModel": "隐私模型",
+    "advTools": "高级生产力工具",
+    "advTools1": "Intellisense 验证",
+    "advTools1Desc": "通过实时红色波浪线突出显示未解决的循环、缺少的括号或无效的XML标签。",
+    "advTools2": "双向压缩",
+    "advTools2Desc": "通过Terser和CSSNano将源代码无缝转换为高压缩率状态。"
+  },
+  "faq": {
+    "title": "常见问题解答",
+    "subtitle": "我们为您整理了一些关于此工具的解答。"
+  },
+  "faqItems": [
+    {
+      "question": "什么是 Pretty Print？",
+      "answer": "Pretty Print 是免费的在线代码格式化美化工具，支持25种语言。"
+    },
+    {
+      "question": "Pretty Print 免费吗？",
+      "answer": "是的，完全免费，无须登录。"
+    },
+    {
+      "question": "安全吗？",
+      "answer": "安全，它100%基于浏览器前端执行，绝不上传您的代码。"
+    },
+    {
+      "question": "支持什么语言？",
+      "answer": "超过25种，包括HTML，JSON，SQL等等。"
+    },
+    {
+      "question": "怎么使用它？",
+      "answer": "粘贴您凌乱的代码并点击格式化即可。"
+    },
+    {
+      "question": "需要安装吗？",
+      "answer": "不需要，在浏览器即可使用。"
+    }
+  ],
+  "privacy": {
+    "badge": "隐私第一",
+    "title": "隐私政策",
+    "subtitle": "因为你的代码永远不会离开浏览器，所以隐私是从架构上得到保证的。",
+    "box1Title": "100% 客户端",
+    "box1Desc": "我们在浏览器中使用JavaScript处理所有逻辑。数据不会传输。",
+    "box2Title": "没有数据记录",
+    "box2Desc": "因为没有后端，所以我们不可能记录你的代码。",
+    "s1Title": "1. 我们收集的信息",
+    "s1Desc": "我们追求最少的数据收集。无需创建账户。",
+    "s1Li1": "使用本地存储(Local Storage)保存主题设置。",
+    "s1Li2": "出于安全考虑的匿名网络日志。",
+    "s2Title": "2. 第三方服务",
+    "s2Desc": "仅用于分析网站流量，您的代码绝对不会分享给他们。",
+    "s3Title": "3. 安全",
+    "s3Desc": "安全是首要特点，切断服务器通信确保最安全的开发体验。",
+    "s4Title": "4. 政策更新",
+    "s4Desc": "这是最新版本：2026年2月。",
+    "s4Footer": "如果有任何问题，通过GitHub联系我们。",
+    "returnHome": "返回首页"
+  },
+  "terms": {
+    "badge": "使用指南",
+    "title": "服务条款",
+    "subtitle": "同意这些简单的条款以保持服务的免费和快速。",
+    "s1Title": "1. 接受条款",
+    "s1Desc": "访问网站即代表同意这些规则。服务按“原样”提供。",
+    "s2Title": "2. 允许的用途",
+    "s2Desc": "个人和商业用途均免费。您不能：",
+    "s2Li1": "用于非法代码处理。",
+    "s2Li2": "进行恶意网络攻击(DDoS)。",
+    "s2Li3": "绕过安全防范限制。",
+    "s3Title": "3. 责任限制",
+    "s3Desc": "虽然我们提供高质量格式化，但我们不对任何数据丢失或错误负责。",
+    "s4Title": "4. 知识产权",
+    "s4Desc": "您的代码完全属于您。我们只提供平台架构。",
+    "returnHome": "返回首页"
+  }
+}

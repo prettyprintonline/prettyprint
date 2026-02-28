@@ -100,6 +100,16 @@ export default function RootLayout({
             gtag('config', 'G-M47XNHYXM0');
           `}
         </Script>
+        {/* Synchronous Language Detection to prevent incorrect browser translation popups  */}
+        <script dangerouslySetInnerHTML={{
+          __html: `
+          try {
+            var path = window.location.pathname.split('/')[1];
+            var locales = ['en','es','fr','de','zh','hi','pt','ru','id','ja','ar','bn','ur'];
+            var loc = locales.includes(path) ? path : 'en';
+            document.documentElement.lang = loc;
+          } catch(e) {}
+        `}} />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
@@ -110,12 +120,7 @@ export default function RootLayout({
           forcedTheme="dark"
           disableTransitionOnChange
         >
-          <OrganizationJsonLd />
-          <Navbar />
-          <div className="flex-1">
-            {children}
-          </div>
-          <Footer />
+          {children}
         </ThemeProvider>
       </body>
     </html>

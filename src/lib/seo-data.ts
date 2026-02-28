@@ -1,3 +1,5 @@
+import { i18n } from "@/i18n/config";
+
 export const SITE_CONFIG = {
     name: "Pretty Print",
     domain: "https://prettyprint.online",
@@ -5,6 +7,22 @@ export const SITE_CONFIG = {
     description:
         "Pretty Print is a free online code formatter and beautifier for 25+ programming languages. Paste your messy code and instantly pretty print it. 100% client-side — your code never leaves the browser.",
 };
+
+export function getLanguageAlternates(toolId?: string) {
+    const alternates: Record<string, string> = {
+        'x-default': toolId ? `${SITE_CONFIG.domain}/${toolId}` : SITE_CONFIG.domain,
+        'en': toolId ? `${SITE_CONFIG.domain}/${toolId}` : SITE_CONFIG.domain,
+    };
+
+    i18n.locales.filter(l => l !== 'en').forEach(locale => {
+        alternates[locale] = toolId ? `${SITE_CONFIG.domain}/${locale}/${toolId}` : `${SITE_CONFIG.domain}/${locale}`;
+    });
+
+    return {
+        canonical: toolId ? `${SITE_CONFIG.domain}/${toolId}` : SITE_CONFIG.domain,
+        languages: alternates,
+    };
+}
 
 export interface LanguageSEO {
     id: string;

@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import Link from "next/link";
+import { getLocalizedHref } from "@/lib/locale-navigation";
 import { LANGUAGES_SEO, SITE_CONFIG } from "@/lib/seo-data";
 import { WebApplicationJsonLd, FAQJsonLd } from "@/components/json-ld";
 import {
@@ -8,72 +8,11 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Zap, Shield, Palette, ArrowUpRight, ArrowRight, Code2, FileCode2, PlaySquare, CopyCheck } from "lucide-react";
+import { Zap, Shield, Palette, ArrowUpRight, ArrowRight, Code2, FileCode2, PlaySquare, CopyCheck, Github } from "lucide-react";
 import { SearchBar } from "@/components/search-bar";
 import { Separator } from "@/components/ui/separator";
 
-export const metadata: Metadata = {
-  title: `Pretty Print — Free Online Code Formatter & Beautifier for 25+ Languages`,
-  description:
-    "Pretty Print is the #1 free online code formatter and beautifier. Pretty print JSON, HTML, CSS, JavaScript, SQL, Python, XML, and 20+ more languages instantly. 100% client-side — your code never leaves the browser.",
-  keywords: [
-    "pretty print",
-    "pretty print online",
-    "code formatter",
-    "code beautifier",
-    "pretty print json",
-    "pretty print html",
-    "pretty print css",
-    "pretty print javascript",
-    "pretty print sql",
-    "pretty print xml",
-    "online code formatter",
-    "beautify code online",
-    "free code formatter",
-  ],
-  alternates: {
-    canonical: SITE_CONFIG.domain,
-  },
-  openGraph: {
-    title: "Pretty Print — Free Online Code Formatter & Beautifier",
-    description:
-      "Pretty print your code online for free. Format and beautify JSON, HTML, CSS, JavaScript, Python, SQL, and 20+ languages instantly in your browser.",
-    url: SITE_CONFIG.domain,
-  },
-};
-
-const HOME_FAQS = [
-  {
-    question: "What is Pretty Print?",
-    answer:
-      "Pretty Print is a free online code formatter and beautifier that supports 25+ programming languages. It instantly formats messy, minified, or unreadable code into clean, properly indented, human-readable output — all directly in your browser.",
-  },
-  {
-    question: "Is Pretty Print free to use?",
-    answer:
-      "Yes, Pretty Print is 100% free with no signup, no limits, and no ads. You can format unlimited code across all supported languages at no cost.",
-  },
-  {
-    question: "Is my code safe when using Pretty Print?",
-    answer:
-      "Absolutely. Pretty Print processes everything 100% client-side in your browser using JavaScript and WebAssembly. Your code never leaves your device and is never uploaded to any server. This makes it safe for sensitive and proprietary code.",
-  },
-  {
-    question: "Which programming languages does Pretty Print support?",
-    answer:
-      "Pretty Print supports 25+ languages including JSON, JavaScript, TypeScript, HTML, CSS, SCSS, LESS, SQL, Python, Java, C, C++, C#, PHP, Ruby, Lua, Perl, XML, XAML, YAML, GraphQL, Markdown, MDX, Babel, React (JSX/TSX), and Angular templates.",
-  },
-  {
-    question: "How does Pretty Print work?",
-    answer:
-      'Simply select your programming language, paste your messy code into the editor, and click the "Format Code" button. Your code will be instantly beautified with proper indentation, spacing, and formatting. You can then copy or download the result.',
-  },
-  {
-    question: "Do I need to install anything to use Pretty Print?",
-    answer:
-      "No. Pretty Print runs entirely in your web browser. There is nothing to download, install, or configure. Just visit the website and start formatting.",
-  },
-];
+// FAQs are dynamic
 
 /* Featured tools — limited grid shown on homepage */
 const FEATURED = LANGUAGES_SEO.slice(0, 8);
@@ -116,43 +55,147 @@ const POPULAR_TAGS = [
   { label: "HTML Formatter", href: "/html" },
 ];
 
-export default function Home() {
+export default function HomePage({ dict, locale }: { dict: any; locale?: string }) {
+  const ddir = dict?.directory || {
+    title: "Complete Tool Directory",
+    subtitle: "Whatever language you speak, we can read. All parsers rely on industry-standard formatting rules including AST logic and standard protocol validation."
+  };
+  const dart = dict?.article || {
+    title1: "The Ultimate Free Online",
+    title2: "Code Formatter & Beautifier",
+    subtitle: "{dart.subtitle}",
+    p1: "In the modern software development lifecycle, engineers constantly interact with compressed blocks of logic. Whether you are debugging a complex API payload mapped in JSON, decrypting a production-bundle of JavaScript, or reviewing deeply nested queries in SQL, attempting to parse unformatted text is an exercise in frustration.",
+    p2: "Our tool acts as a universal hub for codebase aesthetics. No matter if you're working with HTML templates, CSS stylesheets, or Python modules, Pretty Print instantly beautifies your source code with industry-standard rules.",
+    privacyWhy: "{dart.privacyWhy}",
+    privacyP1: "Most legacy beautifier tools submit your raw code to remote backend servers. For developers working under strict NDA policies or managing sensitive .env configurations, this represents a catastrophic security vulnerability.",
+    privacyP2: "Pretty Print leverages native browser WebAssembly and integrated script engines. Your proprietary code sequences are 100% private and never leave your browser partition.",
+    techSpecs: "{dart.techSpecs}",
+    tsZero: "Zero Latency",
+    tsZeroDesc: "AST parsing occurs instantly in the browser thread.",
+    tsLangs: "26+ Languages",
+    tsLangsDesc: "Support for React, SQL, JSON, YAML, and more.",
+    tsIDE: "IDE Framework",
+    tsIDEDesc: "Monaco-powered workspace with VS Code themes.",
+    tsBi: "Bi-directional",
+    tsBiDesc: "Switch between beautified and minified states.",
+    editorEngine: "Editor Engine",
+    privacyModel: "Privacy Model",
+    advTools: "Advanced Productivity Tools",
+    advTools1: "Intellisense Validations",
+    advTools1Desc: "Go beyond simple indentation. Our editor recognizes unresolved loops, missing bracket constraints, or invalid XML tags through real-time red squiggly highlighting—identical to your desktop IDE.",
+    advTools2: "Bi-directional Minification",
+    advTools2Desc: "Efficiency is key for production deployments. Transform rich, readable source files back into high-compression states via Terser and CSSNano integrations, perfect for CDN-ready assets."
+  };
+  const dfaq = dict?.faq || {
+    title: "Frequently Asked Questions",
+    subtitle: "Everything you need to know about our formatting tool."
+  };
+  const faqsItems: { question: string, answer: string }[] = dict?.faqItems || [
+    {
+      question: "What is Pretty Print?",
+      answer: "Pretty Print is a free online code formatter and beautifier that supports 25+ programming languages. It instantly formats messy, minified, or unreadable code into clean, properly indented, human-readable output — all directly in your browser.",
+    },
+    {
+      question: "Is Pretty Print free to use?",
+      answer: "Yes, Pretty Print is 100% free with no signup, no limits, and no ads. You can format unlimited code across all supported languages at no cost.",
+    },
+    {
+      question: "Is my code safe when using Pretty Print?",
+      answer: "Absolutely. Pretty Print processes everything 100% client-side in your browser using JavaScript and WebAssembly. Your code never leaves your device and is never uploaded to any server. This makes it safe for sensitive and proprietary code.",
+    },
+    {
+      question: "Which programming languages does Pretty Print support?",
+      answer: "Pretty Print supports 25+ languages including JSON, JavaScript, TypeScript, HTML, CSS, SCSS, LESS, SQL, Python, Java, C, C++, C#, PHP, Ruby, Lua, Perl, XML, XAML, YAML, GraphQL, Markdown, MDX, Babel, React (JSX/TSX), and Angular templates.",
+    },
+    {
+      question: "How does Pretty Print work?",
+      answer: "Simply select your programming language, paste your messy code into the editor, and click the \"Format Code\" button. Your code will be instantly beautified with proper indentation, spacing, and formatting. You can then copy or download the result.",
+    },
+    {
+      question: "Do I need to install anything to use Pretty Print?",
+      answer: "No. Pretty Print runs entirely in your web browser. There is nothing to download, install, or configure. Just visit the website and start formatting.",
+    }
+  ];
+
+  const t = dict?.hero || {
+    supportedLanguages: "26 Languages Supported",
+    title1: "Instantly Beautify",
+    title2: "Any Code",
+    subtitle: "A lightning-fast, privacy-focused code formatter for developers. Support for JSON, JavaScript, HTML, CSS, and 20+ other languages.",
+    popular: "Popular:"
+  };
+  const tf = dict?.features || {
+    title: "Why Choose Pretty Print?",
+    subtitle: "Designed for modern developers who need robust, private, and instant tools.",
+    astTitle: "Lightning Fast AST",
+    astDesc: "We use strict Abstract Syntax Trees (AST) logic built into bleeding-edge JavaScript parsers, skipping the server and rendering immediately.",
+    privacyTitle: "100% Client-Side Private",
+    privacyDesc: "Zero data tracking. Zero remote payloads. All minification and formatting calculations occur natively inside your browser.",
+    themeTitle: "VS Code Themes & Plugins",
+    themeDesc: "Enjoy familiar Intellisense logic via the Monaco Editor framework with real-time squiggly-line syntax highlighting."
+  };
+  const tt = dict?.topTools || {
+    title: "Top Formatter Tools",
+    viewAll: "View all 26 formats",
+    formatterSuffix: "Formatter"
+  };
+  const th = dict?.howItWorks || {
+    title: "How to Format Code Online",
+    subtitle: "Tired of messy one-liners? Follow these three simple steps to beautify or minify your code completely free.",
+    step1Title: "Select Language",
+    step1Desc: "Choose from our massive library of 26 supported languages ranging from frontend stacks (HTML, React, CSS) to backend data structures (SQL, Python, JSON).",
+    step2Title: "Paste & Format",
+    step2Desc: "Drop your minified text block directly into the left editor panel. As soon as you paste, our AST processors will validate schema errors and format it instantly.",
+    step3Title: "Copy or Minify",
+    step3Desc: "Use the toolbar to copy the beautifully structured document, download it directly to a file extension, or even reverse the process to compress and minify your web bundles!"
+  };
+
   return (
     <main>
       <WebApplicationJsonLd />
-      <FAQJsonLd faqs={HOME_FAQS} />
+      <FAQJsonLd faqs={faqsItems} />
 
       {/* ── Hero ── */}
       <section className="relative overflow-hidden">
         <div className="container px-4 pt-20 pb-16 max-w-screen-xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-400 text-xs font-medium px-3 py-1.5 rounded-full border border-emerald-500/20 mb-8">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-            26 Languages Supported
+            {t.supportedLanguages}
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-balance leading-[1.1] mb-6">
-            Instantly Beautify
+            {t.title1}
             <br />
-            <span className="text-primary">Any Code</span>
+            <span className="text-primary">{t.title2}</span>
           </h1>
 
           <p className="text-base md:text-lg text-muted-foreground max-w-xl mx-auto mb-10 text-balance">
-            A lightning-fast, privacy-focused code formatter for developers.
-            <br className="hidden sm:block" />
-            Support for JSON, JavaScript, HTML, CSS, and 20+ other languages.
+            {t.subtitle}
           </p>
 
           {/* Search Bar */}
-          <SearchBar languages={LANGUAGES_SEO} />
+          <SearchBar languages={LANGUAGES_SEO} locale={locale} dict={dict} />
 
+          {/* GitHub CTA */}
+          <div className="flex justify-center mt-6">
+            <Link href="https://github.com/prettyprintonline/prettyprint" target="_blank" rel="noopener noreferrer">
+              <button className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full border border-primary/30 bg-background px-6 py-2.5 text-sm font-semibold text-foreground shadow-sm hover:bg-muted/50 hover:border-primary/50 transition-all duration-300">
+                <Github className="w-4 h-4 text-primary group-hover:scale-110 transition-transform" />
+                <span>Star us on GitHub</span>
+                <span className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-100%)] group-hover:duration-1000 group-hover:[transform:skew(-12deg)_translateX(100%)]">
+                  <span className="relative h-full w-8 bg-white/5" />
+                </span>
+              </button>
+            </Link>
+          </div>
 
           {/* Popular Tags */}
-          <div className="flex items-center justify-center gap-2 flex-wrap mt-8 text-xs text-muted-foreground">
-            <span>Popular:</span>
+          <div className="flex items-center justify-center gap-2 flex-wrap mt-6 text-xs text-muted-foreground">
+            <span>{t.popular}</span>
             {POPULAR_TAGS.map((tag) => (
               <Link
                 key={tag.href}
-                href={tag.href}
+                href={getLocalizedHref(tag.href, locale)}
                 className="hover:text-primary transition-colors"
               >
                 {tag.label}
@@ -166,35 +209,35 @@ export default function Home() {
       <section className="bg-card border-y">
         <div className="container px-4 py-16 max-w-screen-xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Why Choose Pretty Print?</h2>
-            <p className="text-muted-foreground">Designed for modern developers who need robust, private, and instant tools.</p>
+            <h2 className="text-3xl font-bold mb-4">{tf.title}</h2>
+            <p className="text-muted-foreground">{tf.subtitle}</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <div className="flex flex-col items-center text-center p-6 bg-background rounded-2xl border shadow-sm">
               <div className="w-14 h-14 rounded-full bg-yellow-500/10 flex items-center justify-center mb-6">
                 <Zap className="w-7 h-7 text-yellow-500" />
               </div>
-              <h3 className="font-semibold text-lg mb-2">Lightning Fast AST</h3>
+              <h3 className="font-semibold text-lg mb-2">{tf.astTitle}</h3>
               <p className="text-sm text-muted-foreground">
-                We use strict Abstract Syntax Trees (AST) logic built into bleeding-edge JavaScript parsers, skipping the server and rendering immediately.
+                {tf.astDesc}
               </p>
             </div>
             <div className="flex flex-col items-center text-center p-6 bg-background rounded-2xl border shadow-sm">
               <div className="w-14 h-14 rounded-full bg-emerald-500/10 flex items-center justify-center mb-6">
                 <Shield className="w-7 h-7 text-emerald-500" />
               </div>
-              <h3 className="font-semibold text-lg mb-2">100% Client-Side Private</h3>
+              <h3 className="font-semibold text-lg mb-2">{tf.privacyTitle}</h3>
               <p className="text-sm text-muted-foreground">
-                Zero data tracking. Zero remote payloads. All minification and formatting calculations occur natively inside your browser.
+                {tf.privacyDesc}
               </p>
             </div>
             <div className="flex flex-col items-center text-center p-6 bg-background rounded-2xl border shadow-sm">
               <div className="w-14 h-14 rounded-full bg-violet-500/10 flex items-center justify-center mb-6">
                 <Palette className="w-7 h-7 text-violet-500" />
               </div>
-              <h3 className="font-semibold text-lg mb-2">VS Code Themes & Plugins</h3>
+              <h3 className="font-semibold text-lg mb-2">{tf.themeTitle}</h3>
               <p className="text-sm text-muted-foreground">
-                Enjoy familiar Intellisense logic via the Monaco Editor framework with real-time squiggly-line syntax highlighting.
+                {tf.themeDesc}
               </p>
             </div>
           </div>
@@ -205,12 +248,12 @@ export default function Home() {
       <section className="bg-background" id="top-tools">
         <div className="container px-4 py-16 max-w-screen-xl mx-auto">
           <div className="flex items-center justify-between mb-10">
-            <h2 className="text-2xl font-bold">Top Formatter Tools</h2>
+            <h2 className="text-2xl font-bold">{tt.title}</h2>
             <Link
               href="#all-languages"
               className="hidden sm:inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline transition-colors"
             >
-              View all 26 formats
+              {tt.viewAll}
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -218,13 +261,13 @@ export default function Home() {
             href="#all-languages"
             className="hidden sm:inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline transition-colors"
           >
-            View all 26 formats
+            {tt.viewAll}
             <ArrowRight className="w-4 h-4" />
           </Link>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {FEATURED.map((lang) => (
-              <Link key={lang.id} href={`/${encodeURIComponent(lang.id)}`}>
+              <Link key={lang.id} href={getLocalizedHref(`/${encodeURIComponent(lang.id)}`, locale)}>
                 <div className="group border rounded-xl p-5 hover:border-primary/40 transition-all cursor-pointer h-full bg-card hover:bg-muted/30 hover:-translate-y-1 shadow-sm hover:shadow-md">
                   <div className="flex items-start justify-between mb-4">
                     <div
@@ -234,9 +277,9 @@ export default function Home() {
                     </div>
                     <ArrowUpRight className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
-                  <h3 className="font-semibold text-base mb-2 text-foreground">{lang.name} Formatter</h3>
+                  <h3 className="font-semibold text-base mb-2 text-foreground">{lang.name} {tt.formatterSuffix}</h3>
                   <p className="text-sm text-muted-foreground line-clamp-2">
-                    {lang.cardDesc}
+                    {dict?.formatterCards?.[lang.id] || lang.cardDesc}
                   </p>
                 </div>
               </Link>
@@ -249,7 +292,7 @@ export default function Home() {
               href="#all-languages"
               className="inline-flex items-center gap-2 bg-secondary hover:bg-secondary/80 text-secondary-foreground px-5 py-2.5 rounded-lg text-sm font-medium transition-colors"
             >
-              View all 26 formats
+              {tt.viewAll}
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -260,29 +303,29 @@ export default function Home() {
       <section className="bg-muted/30 border-y">
         <div className="container px-4 py-20 max-w-screen-xl mx-auto">
           <div className="text-center mb-14">
-            <h2 className="text-3xl font-bold mb-4">How to Format Code Online</h2>
-            <p className="text-muted-foreground max-w-xl mx-auto">Tired of messy one-liners? Follow these three simple steps to beautify or minify your code completely free.</p>
+            <h2 className="text-3xl font-bold mb-4">{th.title}</h2>
+            <p className="text-muted-foreground max-w-xl mx-auto">{th.subtitle}</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto relative">
             <div className="relative p-8 bg-card border rounded-2xl shadow-sm hover:border-primary/50 transition-colors">
               <div className="absolute -top-4 -left-4 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold shadow-md">1</div>
               <FileCode2 className="w-10 h-10 text-primary mb-6" />
-              <h3 className="text-xl font-bold mb-3">Select Language</h3>
-              <p className="text-muted-foreground leading-relaxed">Choose from our massive library of 26 supported languages ranging from frontend stacks (HTML, React, CSS) to backend data structures (SQL, Python, JSON).</p>
+              <h3 className="text-xl font-bold mb-3">{th.step1Title}</h3>
+              <p className="text-muted-foreground leading-relaxed">{th.step1Desc}</p>
             </div>
 
             <div className="relative p-8 bg-card border rounded-2xl shadow-sm hover:border-primary/50 transition-colors">
               <div className="absolute -top-4 -left-4 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold shadow-md">2</div>
               <PlaySquare className="w-10 h-10 text-primary mb-6" />
-              <h3 className="text-xl font-bold mb-3">Paste & Format</h3>
-              <p className="text-muted-foreground leading-relaxed">Drop your minified text block directly into the left editor panel. As soon as you paste, our AST processors will validate schema errors and format it instantly.</p>
+              <h3 className="text-xl font-bold mb-3">{th.step2Title}</h3>
+              <p className="text-muted-foreground leading-relaxed">{th.step2Desc}</p>
             </div>
 
             <div className="relative p-8 bg-card border rounded-2xl shadow-sm hover:border-primary/50 transition-colors">
               <div className="absolute -top-4 -left-4 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold shadow-md">3</div>
               <CopyCheck className="w-10 h-10 text-primary mb-6" />
-              <h3 className="text-xl font-bold mb-3">Copy or Minify</h3>
-              <p className="text-muted-foreground leading-relaxed">Use the toolbar to copy the beautifully structured document, download it directly to a file extension, or even reverse the process to compress and minify your web bundles!</p>
+              <h3 className="text-xl font-bold mb-3">{th.step3Title}</h3>
+              <p className="text-muted-foreground leading-relaxed">{th.step3Desc}</p>
             </div>
           </div>
         </div>
@@ -292,12 +335,12 @@ export default function Home() {
       <section id="all-languages" className="bg-background">
         <div className="container px-4 py-20 max-w-screen-xl mx-auto">
           <div className="flex flex-col items-center mb-12 text-center">
-            <h2 className="text-3xl font-bold mb-4">Complete Tool Directory</h2>
-            <p className="text-muted-foreground max-w-2xl">Whatever language you speak, we can read. All parsers rely on industry-standard formatting rules including AST logic and standard protocol validation.</p>
+            <h2 className="text-3xl font-bold mb-4">{ddir.title}</h2>
+            <p className="text-muted-foreground max-w-2xl">{ddir.subtitle}</p>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
             {LANGUAGES_SEO.map((lang) => (
-              <Link key={lang.id} href={`/${encodeURIComponent(lang.id)}`}>
+              <Link key={lang.id} href={getLocalizedHref(`/${encodeURIComponent(lang.id)}`, locale)}>
                 <div className="group flex items-center gap-3 border rounded-xl p-3 hover:border-primary/60 hover:bg-muted/20 transition-all cursor-pointer bg-card shadow-sm hover:shadow-md">
                   <div
                     className={`w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold border shrink-0 ${ICON_COLORS[lang.id] || "bg-primary/10 text-primary border-primary/20"}`}
@@ -321,11 +364,11 @@ export default function Home() {
         <div className="container px-4 py-28 max-w-5xl mx-auto relative">
           <header className="max-w-3xl mx-auto text-center mb-20">
             <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-6 bg-linear-to-r from-foreground to-foreground/60 bg-clip-text text-transparent">
-              The Ultimate Free Online <br /> Code Formatter & Beautifier
+              {dart.title1} <br /> {dart.title2}
             </h2>
             <div className="h-1.5 w-24 bg-primary mx-auto rounded-full mb-8" />
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Pretty Print is the professional-grade solution for developers, engineered to transform scrambled, minified, or syntactically messy code into perfectly indented architecture strings.
+              {dart.subtitle}
             </p>
           </header>
 
@@ -334,24 +377,24 @@ export default function Home() {
             <div className="lg:col-span-7 space-y-12">
               <section className="prose prose-neutral dark:prose-invert max-w-none prose-p:text-lg prose-p:leading-relaxed prose-strong:text-foreground prose-a:text-primary prose-a:no-underline hover:prose-a:underline">
                 <p>
-                  In the modern software development lifecycle, engineers constantly interact with compressed blocks of logic. Whether you are debugging a complex API payload mapped in <Link href="/json" className="font-semibold text-primary">JSON</Link>, decrypting a production-bundle of <Link href="/javascript" className="font-semibold text-primary">JavaScript</Link>, or reviewing deeply nested queries in <Link href="/sql" className="font-semibold text-primary">SQL</Link>, attempting to parse unformatted text is an exercise in frustration.
+                  {dart.p1}
                 </p>
                 <p>
-                  Our tool acts as a universal hub for codebase aesthetics. No matter if you're working with <Link href="/html" className="font-medium underline decoration-primary/20">HTML</Link> templates, <Link href="/css" className="font-medium underline decoration-primary/20">CSS</Link> stylesheets, or <Link href="/python" className="font-medium underline decoration-primary/20">Python</Link> modules, <strong>Pretty Print</strong> instantly beautifies your source code with industry-standard rules.
+                  {dart.p2}
                 </p>
               </section>
 
               <div className="bg-muted/30 border rounded-3xl p-8 space-y-6">
                 <h3 className="text-2xl font-bold flex items-center gap-3">
                   <Shield className="w-6 h-6 text-primary" />
-                  Why Privacy-First Formatting Matters
+                  {dart.privacyWhy}
                 </h3>
                 <div className="space-y-4 text-muted-foreground leading-relaxed text-lg">
                   <p>
-                    Most legacy <strong>beautifier tools</strong> submit your raw code to remote backend servers. For developers working under strict NDA policies or managing sensitive <code>.env</code> configurations, this represents a catastrophic security vulnerability.
+                    {dart.privacyP1}
                   </p>
                   <p>
-                    Pretty Print leverages native browser <strong>WebAssembly</strong> and integrated script engines. Your proprietary code sequences are 100% private and never leave your browser partition.
+                    {dart.privacyP2}
                   </p>
                 </div>
               </div>
@@ -360,28 +403,28 @@ export default function Home() {
             {/* Right Column: Technical Spec List & Features */}
             <div className="lg:col-span-5 space-y-8">
               <div className="bg-background border shadow-xl rounded-3xl p-8 sticky top-24">
-                <h3 className="text-xl font-bold mb-6 underline decoration-primary/30 underline-offset-4 font-mono">Technical Specifications</h3>
+                <h3 className="text-xl font-bold mb-6 underline decoration-primary/30 underline-offset-4 font-mono">{dart.techSpecs}</h3>
                 <ul className="space-y-6 m-0 p-0 list-none">
                   {[
                     {
                       icon: <Zap className="w-5 h-5" />,
-                      title: "Zero Latency",
-                      desc: "AST parsing occurs instantly in the browser thread.",
+                      title: dart.tsZero,
+                      desc: dart.tsZeroDesc,
                     },
                     {
                       icon: <Code2 className="w-5 h-5" />,
-                      title: "26+ Languages",
-                      desc: "Support for React, SQL, JSON, YAML, and more.",
+                      title: dart.tsLangs,
+                      desc: dart.tsLangsDesc,
                     },
                     {
                       icon: <Palette className="w-5 h-5" />,
-                      title: "IDE Framework",
-                      desc: "Monaco-powered workspace with VS Code themes.",
+                      title: dart.tsIDE,
+                      desc: dart.tsIDEDesc,
                     },
                     {
                       icon: <FileCode2 className="w-5 h-5" />,
-                      title: "Bi-directional",
-                      desc: "Switch between beautified and minified states.",
+                      title: dart.tsBi,
+                      desc: dart.tsBiDesc,
                     },
                   ].map((item, i) => (
                     <li key={i} className="flex gap-4 group">
@@ -404,11 +447,11 @@ export default function Home() {
 
                 <div className="space-y-6">
                   <div className="flex items-center justify-between text-sm font-medium">
-                    <span className="text-muted-foreground">Editor Engine</span>
+                    <span className="text-muted-foreground">{dart.editorEngine}</span>
                     <span className="text-foreground">Microsoft Monaco</span>
                   </div>
                   <div className="flex items-center justify-between text-sm font-medium">
-                    <span className="text-muted-foreground">Privacy Model</span>
+                    <span className="text-muted-foreground">{dart.privacyModel}</span>
                     <span className="text-green-500 font-bold uppercase tracking-tighter">100% Client-Side</span>
                   </div>
                 </div>
@@ -418,24 +461,24 @@ export default function Home() {
           </div>
 
           <section className="mt-28 border-t pt-20">
-            <h3 className="text-3xl font-bold text-center mb-16 underline decoration-primary/30 underline-offset-8 italic">Advanced Productivity Tools</h3>
+            <h3 className="text-3xl font-bold text-center mb-16 underline decoration-primary/30 underline-offset-8 italic">{dart.advTools}</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto text-center md:text-left">
               <div className="space-y-4 bg-card/50 p-8 rounded-3xl border border-border/50">
                 <h4 className="text-xl font-bold flex items-center gap-2 justify-center md:justify-start">
                   <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                  Intellisense Validations
+                  {dart.advTools1}
                 </h4>
                 <p className="text-muted-foreground leading-relaxed text-lg">
-                  Go beyond simple indentation. Our editor recognizes unresolved loops, missing bracket constraints, or invalid <Link href="/xml" className="text-primary hover:underline font-medium">XML</Link> tags through real-time red squiggly highlighting—identical to your desktop IDE.
+                  {dart.advTools1Desc}
                 </p>
               </div>
               <div className="space-y-4 bg-card/50 p-8 rounded-3xl border border-border/50">
                 <h4 className="text-xl font-bold flex items-center gap-2 justify-center md:justify-start">
                   <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                  Bi-directional Minification
+                  {dart.advTools2}
                 </h4>
                 <p className="text-muted-foreground leading-relaxed text-lg">
-                  Efficiency is key for production deployments. Transform rich, readable source files back into high-compression states via <Link href="/javascript" className="text-primary hover:underline font-medium">Terser</Link> and <strong>CSSNano</strong> integrations, perfect for CDN-ready assets.
+                  {dart.advTools2Desc}
                 </p>
               </div>
             </div>
@@ -447,13 +490,13 @@ export default function Home() {
       <section className="border-t bg-muted/20">
         <div className="container px-4 py-20 max-w-screen-xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
-            <p className="text-muted-foreground">Everything you need to know about our formatting tool.</p>
+            <h2 className="text-3xl font-bold mb-4">{dfaq.title}</h2>
+            <p className="text-muted-foreground">{dfaq.subtitle}</p>
           </div>
           <div className="max-w-3xl mx-auto bg-card border rounded-2xl p-6 shadow-sm">
             <Accordion type="single" collapsible className="w-full">
-              {HOME_FAQS.map((faq, i) => (
-                <AccordionItem key={i} value={`faq-${i}`} className={i === HOME_FAQS.length - 1 ? "border-0" : ""}>
+              {faqsItems.map((faq, i) => (
+                <AccordionItem key={i} value={`faq-${i}`} className={i === faqsItems.length - 1 ? "border-0" : ""}>
                   <AccordionTrigger className="text-left text-base font-semibold py-4 hover:text-primary">
                     {faq.question}
                   </AccordionTrigger>

@@ -1,0 +1,191 @@
+{
+  "nav": {
+    "allFormats": "All Formats",
+    "clientSide": "Client-Side Only",
+    "starGithub": "Star us on GitHub"
+  },
+  "hero": {
+    "supportedLanguages": "26 Languages Supported",
+    "title1": "Instantly Beautify",
+    "title2": "Any Code",
+    "subtitle": "A lightning-fast, privacy-focused code formatter for developers. Support for JSON, JavaScript, HTML, CSS, and 20+ other languages.",
+    "popular": "Popular:"
+  },
+  "features": {
+    "title": "Why Choose Pretty Print?",
+    "subtitle": "Designed for modern developers who need robust, private, and instant tools.",
+    "astTitle": "Lightning Fast AST",
+    "astDesc": "We use strict Abstract Syntax Trees (AST) logic built into bleeding-edge JavaScript parsers, skipping the server and rendering immediately.",
+    "privacyTitle": "100% Client-Side Private",
+    "privacyDesc": "Zero data tracking. Zero remote payloads. All minification and formatting calculations occur natively inside your browser.",
+    "themeTitle": "VS Code Themes & Plugins",
+    "themeDesc": "Enjoy familiar Intellisense logic via the Monaco Editor framework with real-time squiggly-line syntax highlighting."
+  },
+  "topTools": {
+    "title": "Top Formatter Tools",
+    "viewAll": "View all 26 formats",
+    "formatterSuffix": "Formatter"
+  },
+  "howItWorks": {
+    "title": "How to Format Code Online",
+    "subtitle": "Tired of messy one-liners? Follow these three simple steps to beautify or minify your code completely free.",
+    "step1Title": "Select Language",
+    "step1Desc": "Choose from our massive library of 26 supported languages ranging from frontend stacks (HTML, React, CSS) to backend data structures (SQL, Python, JSON).",
+    "step2Title": "Paste & Format",
+    "step2Desc": "Drop your minified text block directly into the left editor panel. As soon as you paste, our AST processors will validate schema errors and format it instantly.",
+    "step3Title": "Copy or Minify",
+    "step3Desc": "Use the toolbar to copy the beautifully structured document, download it directly to a file extension, or even reverse the process to compress and minify your web bundles!"
+  },
+  "tool": {
+    "whatIs": "What is",
+    "howTo": "How to Pretty Print",
+    "online": "Online",
+    "faqs": "Formatter — Frequently Asked Questions",
+    "p1_1": "is a free online tool that lets you instantly format, beautify, and indent your",
+    "p1_2": "code directly in your browser. No signup, no installation, no server uploads — your code stays 100% private. Simply paste your unformatted",
+    "p1_3": "code, click \"Format Code\", and get clean, readable output in seconds.",
+    "li1": "Navigate to the",
+    "li1_2": "formatter page (you're already here!).",
+    "li2": "Paste your messy or minified",
+    "li2_2": "code into the editor above.",
+    "li3": "Click the",
+    "li3_1": "\"Format Code\"",
+    "li3_2": "button to instantly pretty print your code.",
+    "li4": "Copy the formatted result to your clipboard or download it as a file."
+  },
+  "footer": {
+    "description": "Free online code formatter & beautifier. Your code never leaves your browser.",
+    "home": "Home",
+    "privacy": "Privacy",
+    "terms": "Terms"
+  },
+  "search": {
+    "placeholder": "Search for a language (e.g., JSON, SQL, Python)..."
+  },
+  "formatterCards": {
+    "json": "Pretty print JSON data — format, validate, and beautify instantly.",
+    "javascript": "Format and indent JavaScript and ES6+ code syntax.",
+    "typescript": "Beautify TypeScript files with proper typing alignment.",
+    "react": "Format React JSX/TSX components structurally.",
+    "html": "Indent and organize HTML5 document structures.",
+    "css": "Beautify CSS stylesheets with auto-indentation.",
+    "less": "Format LESS preprocessor stylesheet declarations.",
+    "scss": "Beautify SASS/SCSS nested structures instantly.",
+    "sql": "Format complex SQL queries into readable lines.",
+    "python": "Enforce PEP-8 style indentation for Python scripts.",
+    "java": "Properly align Java classes and method braces.",
+    "c": "Format C source files with standard K&R style.",
+    "c++": "Beautify C++ headers and implementations.",
+    "c#": "Format C# code files following Microsoft guidelines.",
+    "php": "Indent and beautify PHP server-side server blocks.",
+    "ruby": "Format Ruby gems and application script logic.",
+    "lua": "Beautify Lua tables and logical function blocks.",
+    "perl": "Format Perl scripts with standard brace alignment.",
+    "xml": "Indent XML tags and nested configuration data.",
+    "xaml": "Beautify XAML markup for UI definitions.",
+    "yaml": "Format YAML files with exact spacing rules.",
+    "graphql": "Format GraphQL queries and schema definitions.",
+    "markdown": "Tidy up Markdown spacing and list items.",
+    "mdx": "Format MDX files mixing Markdown and JSX.",
+    "babel": "Format Babel configuration and transform files.",
+    "angular": "Beautify Angular HTML templates and directives."
+  },
+  "directory": {
+    "title": "Complete Tool Directory",
+    "subtitle": "Whatever language you speak, we can read. All parsers rely on industry-standard formatting rules including AST logic and standard protocol validation."
+  },
+  "article": {
+    "title1": "The Ultimate Free Online",
+    "title2": "Code Formatter & Beautifier",
+    "subtitle": "Pretty Print is the professional-grade solution for developers, engineered to transform scrambled, minified, or syntactically messy code into perfectly indented architecture strings.",
+    "p1": "In the modern software development lifecycle, engineers constantly interact with compressed blocks of logic. Whether you are debugging a complex API payload mapped in JSON, decrypting a production-bundle of JavaScript, or reviewing deeply nested queries in SQL, attempting to parse unformatted text is an exercise in frustration.",
+    "p2": "Our tool acts as a universal hub for codebase aesthetics. No matter if you're working with HTML templates, CSS stylesheets, or Python modules, Pretty Print instantly beautifies your source code with industry-standard rules.",
+    "privacyWhy": "Why Privacy-First Formatting Matters",
+    "privacyP1": "Most legacy beautifier tools submit your raw code to remote backend servers. For developers working under strict NDA policies or managing sensitive .env configurations, this represents a catastrophic security vulnerability.",
+    "privacyP2": "Pretty Print leverages native browser WebAssembly and integrated script engines. Your proprietary code sequences are 100% private and never leave your browser partition.",
+    "techSpecs": "Technical Specifications",
+    "tsZero": "Zero Latency",
+    "tsZeroDesc": "AST parsing occurs instantly in the browser thread.",
+    "tsLangs": "26+ Languages",
+    "tsLangsDesc": "Support for React, SQL, JSON, YAML, and more.",
+    "tsIDE": "IDE Framework",
+    "tsIDEDesc": "Monaco-powered workspace with VS Code themes.",
+    "tsBi": "Bi-directional",
+    "tsBiDesc": "Switch between beautified and minified states.",
+    "editorEngine": "Editor Engine",
+    "privacyModel": "Privacy Model",
+    "advTools": "Advanced Productivity Tools",
+    "advTools1": "Intellisense Validations",
+    "advTools1Desc": "Go beyond simple indentation. Our editor recognizes unresolved loops, missing bracket constraints, or invalid XML tags through real-time red squiggly highlighting—identical to your desktop IDE.",
+    "advTools2": "Bi-directional Minification",
+    "advTools2Desc": "Efficiency is key for production deployments. Transform rich, readable source files back into high-compression states via Terser and CSSNano integrations, perfect for CDN-ready assets."
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know about our formatting tool."
+  },
+  "faqItems": [
+    {
+      "question": "What is Pretty Print?",
+      "answer": "Pretty Print is a free online code formatter and beautifier that supports 25+ programming languages. It instantly formats messy, minified, or unreadable code into clean, properly indented, human-readable output — all directly in your browser."
+    },
+    {
+      "question": "Is Pretty Print free to use?",
+      "answer": "Yes, Pretty Print is 100% free with no signup, no limits, and no ads. You can format unlimited code across all supported languages at no cost."
+    },
+    {
+      "question": "Is my code safe when using Pretty Print?",
+      "answer": "Absolutely. Pretty Print processes everything 100% client-side in your browser using JavaScript and WebAssembly. Your code never leaves your device and is never uploaded to any server. This makes it safe for sensitive and proprietary code."
+    },
+    {
+      "question": "Which programming languages does Pretty Print support?",
+      "answer": "Pretty Print supports 25+ languages including JSON, JavaScript, TypeScript, HTML, CSS, SCSS, LESS, SQL, Python, Java, C, C++, C#, PHP, Ruby, Lua, Perl, XML, XAML, YAML, GraphQL, Markdown, MDX, Babel, React (JSX/TSX), and Angular templates."
+    },
+    {
+      "question": "How does Pretty Print work?",
+      "answer": "Simply select your programming language, paste your messy code into the editor, and click the 'Format Code' button. Your code will be instantly beautified with proper indentation, spacing, and formatting. You can then copy or download the result."
+    },
+    {
+      "question": "Do I need to install anything to use Pretty Print?",
+      "answer": "No. Pretty Print runs entirely in your web browser. There is nothing to download, install, or configure. Just visit the website and start formatting."
+    }
+  ],
+  "privacy": {
+    "badge": "Privacy First",
+    "title": "Privacy Policy",
+    "subtitle": "Transparency is at the core of Pretty Print. Because your code never leaves your browser, your privacy is literally built into the architecture.",
+    "box1Title": "100% Client-Side",
+    "box1Desc": "We process all formatting, minification, and validation logic directly within your web browser using JavaScript and Web Workers. Your data is never transmitted to our servers.",
+    "box2Title": "No Data Logging",
+    "box2Desc": "Since we don't have a backend processing layer for your code, we cannot and do not log the contents of your formatting requests. What you paste is for your eyes only.",
+    "s1Title": "1. Information We Collect",
+    "s1Desc": "We aim for minimal data collection. We do not require account creation, and we do not store your source code. The only information we interact with includes:",
+    "s1Li1": "We use browser Local Storage to save your editor settings (theme, tab size) and your last input to improve your workflow between sessions. You can clear this anytime by clearing your browser cache.",
+    "s1Li2": "Standard web server logs (IP addresses, browser types) are collected by our hosting provider for security and analytics purposes, but these are never linked to the content you format.",
+    "s2Title": "2. Third-Party Services",
+    "s2Desc": "We may use third-party tools like Google Analytics to understand site traffic. These tools may use cookies to track anonymous usage patterns (pages visited, time on site). No code data is ever shared with these providers.",
+    "s3Title": "3. Security",
+    "s3Desc": "Security is our primary feature. By eliminating the transit of your code over the internet to a central server, we eliminate the primary risk associated with online development tools. Your data remains in your browser's memory partition.",
+    "s4Title": "4. Policy Updates",
+    "s4Desc": "We may update this policy periodically. Significant changes will be noted on this page. Last updated: February 2026.",
+    "s4Footer": "If you have questions, please reach out via our GitHub repository or main contact channels.",
+    "returnHome": "Return to Home"
+  },
+  "terms": {
+    "badge": "Usage Guidelines",
+    "title": "Terms of Service",
+    "subtitle": "By using Pretty Print, you agree to these simple terms designed to keep the service free and fast for everyone.",
+    "s1Title": "1. Acceptance of Terms",
+    "s1Desc": "Pretty Print provides a web-based code formatting service. By accessing our website, you acknowledge that you have read, understood, and agree to be bound by these terms. This service is provided 'as is' without warranty of any kind.",
+    "s2Title": "2. Permitted Use",
+    "s2Desc": "You are free to use Pretty Print for personal, educational, or commercial purposes. You may format as much code as you need. However, you agree not to:",
+    "s2Li1": "Use the service for any illegal activities or to process malicious code.",
+    "s2Li2": "Attempt to scrape, heavy-load, or DDoS the platform services.",
+    "s2Li3": "Bypass any security measures or rate limits if implemented.",
+    "s3Title": "3. Limitation of Liability",
+    "s3Desc": "While we strive for 100% accuracy in our formatting algorithms, Pretty Print is not responsible for any bugs, data loss, or system failures that may occur after you use the formatted output in your own projects. Always verify critical code before deployment.",
+    "s4Title": "4. Intellectual Property",
+    "s4Desc": "Pretty Print does not claim any ownership over the code you paste or format. The code remains your intellectual property. Our website's design, logo, and custom logic remain the property of the Pretty Print developers.",
+    "returnHome": "Back to Toolbase"
+  }
+}

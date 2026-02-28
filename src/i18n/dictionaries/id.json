@@ -1,0 +1,191 @@
+{
+  "nav": {
+    "allFormats": "Semua Format",
+    "clientSide": "Hanya Sisi-Klien",
+    "starGithub": "Beri Bintang di GitHub"
+  },
+  "hero": {
+    "supportedLanguages": "26 Bahasa Didukung",
+    "title1": "Percantik Sepenuhnya",
+    "title2": "Kode Apa Pun",
+    "subtitle": "Alat formatter kode super cepat dan berfokus pada privasi untuk pengembang. Mendukung JSON, JavaScript, HTML, CSS, dan 20+ bahasa lainnya.",
+    "popular": "Populer:"
+  },
+  "features": {
+    "title": "Mengapa Memilih Pretty Print?",
+    "subtitle": "Dirancang untuk pengembang modern yang membutuhkan alat yang tangguh, privat, dan instan.",
+    "astTitle": "AST Super Cepat",
+    "astDesc": "Kami menggunakan logika Abstract Syntax Trees (AST) yang ketat yang ada pada parser JavaScript mutakhir, melewatkan server dan merender dengan cepat.",
+    "privacyTitle": "100% Privat Sisi-Klien",
+    "privacyDesc": "Nol pelacakan data. Nol payload jarak jauh. Semua komputasi minifikasi dan format terjadi secara native di dalam browser Anda.",
+    "themeTitle": "Tema & Plugin VS Code",
+    "themeDesc": "Nikmati logika Intellisense yang sudah dikenal melalui kerangka Monaco Editor dengan penyorotan sintaks garis bergelombang real-time."
+  },
+  "topTools": {
+    "title": "Alat Pemformatan Teratas",
+    "viewAll": "Lihat semua 26 format",
+    "formatterSuffix": "Formatter"
+  },
+  "howItWorks": {
+    "title": "Cara Memformat Kode Online",
+    "subtitle": "Bosan dengan kode satu baris yang berantakan? Ikuti tiga langkah sederhana ini untuk mempercantik atau meminifikasi kode Anda secara gratis.",
+    "step1Title": "Pilih Bahasa",
+    "step1Desc": "Pilih dari pustaka masif 26 bahasa kami yang bervariasi dari tumpukan frontend (HTML, React, CSS) hingga struktur data backend (SQL, Python, JSON).",
+    "step2Title": "Tempel & Format",
+    "step2Desc": "Jatuhkan blok teks minifikasi Anda langsung ke panel editor sebelah kiri. Begitu Anda menempelkannya, pemroses AST kami akan memvalidasi kesalahan skema dan memformatnya secara instan.",
+    "step3Title": "Salin atau Minifikasi",
+    "step3Desc": "Gunakan toolbar untuk menyalin dokumen yang terstruktur dengan indah, unduh secara langsung ke ekstensi file, atau bahkan balikkan proses untuk mengompres bundling web Anda!"
+  },
+  "tool": {
+    "whatIs": "Apa tujuan Formater",
+    "howTo": "Cara Beroperasi",
+    "online": "Daring Internet",
+    "faqs": "Menjawab apa yang sering ditanyakan pengguna",
+    "p1_1": "adalah formater kode sumber secara bebas bagi berkas",
+    "p1_2": "komputer peramban. Sangat privasi buat dokumen file",
+    "p1_3": "sehingga teks terlihat luar biasa cantik.",
+    "li1": "Berkunjung melayari aplikasi",
+    "li1_2": "langsung ke atas.",
+    "li2": "Salin tampal di daerah form teks",
+    "li2_2": "terkini ini.",
+    "li3": "Menekan butang sistem hijau formater",
+    "li3_1": "Format Code",
+    "li3_2": "memproses peramban.",
+    "li4": "Ke keping ingatan dan pengunduhan sistem arsip."
+  },
+  "footer": {
+    "description": "Formatter kode online gratis. Kode Anda tidak akan pernah meninggalkan browser Anda.",
+    "home": "Beranda",
+    "privacy": "Privasi",
+    "terms": "Syarat"
+  },
+  "search": {
+    "placeholder": "Cari bahasa (mis., JSON, SQL, Python)..."
+  },
+  "formatterCards": {
+    "json": "Cetak JSON dengan rapi — format dan percantik secara instan.",
+    "javascript": "Format dan identasi sintaks kode JavaScript.",
+    "typescript": "Percantik file TypeScript dengan perataan teks yang tepat.",
+    "react": "Format komponen JSX/TSX React.",
+    "html": "Berikan identasi dan atur secara HTML5.",
+    "css": "Percantik stylesheet CSS.",
+    "less": "Format pernyataan CSS kustom.",
+    "scss": "Percantik pre-prosesor SASS/SCSS instan.",
+    "sql": "Format kueri SQL rumit menjadi baris.",
+    "python": "Terapkan spasi gaya PEP-8 untuk skrip Python.",
+    "java": "Selaraskan kode dan metode program Java.",
+    "c": "Format bahasa C dalam standar industri.",
+    "c++": "Percantik header C++ dan C Plus Plus.",
+    "c#": "Format file Microsoft C#.",
+    "php": "Indentasi teks dan kode PHP untuk web.",
+    "ruby": "Format skript dari Ruby on Rails.",
+    "lua": "Percantik kode Lua.",
+    "perl": "Format teks kode Perl standar industri.",
+    "xml": "Indetasi tag XML.",
+    "xaml": "XAML kustom untuk Microsoft UI.",
+    "yaml": "Format YAML devOps script.",
+    "graphql": "Format API GraphQL kode untuk node.",
+    "markdown": "Bersihkan teks file doc Markdown dan Spasi.",
+    "mdx": "Format format dokumen MDX framework.",
+    "babel": "Format Babel dan Webpack.",
+    "angular": "Percantik Angular UI."
+  },
+  "directory": {
+    "title": "Direktori Alat Lengkap",
+    "subtitle": "Apa pun bahasa Anda, kami dapat memformatnya dengan aturan AST."
+  },
+  "article": {
+    "title1": "Format Kode Gratis",
+    "title2": "Terbaik Online",
+    "subtitle": "Pretty Print adalah alat pro untuk estetika kode.",
+    "p1": "Bekerja dengan kode yang dikompres atau sulit dibaca sangat menyebalkan.",
+    "p2": "Alat kami membuat kode lebih cantik untuk lebih dari 25 bahasa pemograman.",
+    "privacyWhy": "Mengapa Privasi Harus Utama",
+    "privacyP1": "Jangan pernah memberikan kode perusahaan ke alat eksternal.",
+    "privacyP2": "Kami 100% sisi klien. Semua dijalankan di peramban Anda dengan aman.",
+    "techSpecs": "Spesifikasi Teknis",
+    "tsZero": "Tanpa Latensi",
+    "tsZeroDesc": "Pemrosesan seketika di peramban.",
+    "tsLangs": "26+ Bahasa",
+    "tsLangsDesc": "Mendukung React, SQL, JSON, YAML.",
+    "tsIDE": "Kerangka IDE",
+    "tsIDEDesc": "Editor Monaco dan tema VS Code.",
+    "tsBi": "Dua Arah",
+    "tsBiDesc": "Beralih cantik ke padat kode.",
+    "editorEngine": "Mesin Teks",
+    "privacyModel": "Model Privasi",
+    "advTools": "Peralatan Canggih",
+    "advTools1": "Validasi Lanjutan",
+    "advTools1Desc": "Menemukan kesalahan kode dengan garis merah bergelombang persis IDE.",
+    "advTools2": "Minifikasi Andal",
+    "advTools2Desc": "Gunakan Terser dan CSSNano untuk pemampatan aset secara maksimal."
+  },
+  "faq": {
+    "title": "Pertanyaan Tambahan",
+    "subtitle": "Menjawab apa yang sering ditanyakan pengguna."
+  },
+  "faqItems": [
+    {
+      "question": "Apa itu Pretty Print?",
+      "answer": "Alat online formater teks skrip bahasa komputer."
+    },
+    {
+      "question": "Apakah ini aplikasi berbayar?",
+      "answer": "100% gratis kapanpun."
+    },
+    {
+      "question": "Apakah Pretty Print aman?",
+      "answer": "Sangat. Peramban komputer mengatur segalanya."
+    },
+    {
+      "question": "Bahasa pemrograman apa saja yang didukung?",
+      "answer": "Python, C++, JSON, YAML, SQL, JavaScript."
+    },
+    {
+      "question": "Bagaimana prosedurnya?",
+      "answer": "Tempel dan tekan tombol percantik."
+    },
+    {
+      "question": "Haruskah aplikasi pendukung diinstal?",
+      "answer": "Semua tersedia instan dari peramban Anda."
+    }
+  ],
+  "privacy": {
+    "badge": "Privasi Utama",
+    "title": "Kebijakan Privasi",
+    "subtitle": "Kode berada di komputer peramban.",
+    "box1Title": "100% Berkas Lokal",
+    "box1Desc": "Data kode tidak dikirim.",
+    "box2Title": "Tanpa Pelacakan",
+    "box2Desc": "Tidak ada log teks data.",
+    "s1Title": "1. Informasi Kami",
+    "s1Desc": "Aplikasi tak butuh daftar.",
+    "s1Li1": "Tema layar direkam.",
+    "s1Li2": "Pemblokiran analitis eksternal.",
+    "s2Title": "2. Layanan Eksternal",
+    "s2Desc": "Data kode disembunyikan kuat.",
+    "s3Title": "3. Keamanan",
+    "s3Desc": "Pemograman lebih hebat.",
+    "s4Title": "4. Pembaruan",
+    "s4Desc": "Sejak Tahun Angka 2026.",
+    "s4Footer": "Kirim isyarat via Github.",
+    "returnHome": "Kembali Awal Pusat"
+  },
+  "terms": {
+    "badge": "Syarat Web",
+    "title": "Syarat dan Ketentuan",
+    "subtitle": "Disetujui secara umum oleh ahli perangkat lunak.",
+    "s1Title": "1. Konfirmasi Hak",
+    "s1Desc": "Membaca dan dipahami.",
+    "s2Title": "2. Akses Diberi",
+    "s2Desc": "Gratis tetapi patuhi larangan yang mana:",
+    "s2Li1": "Tidak mengeksploitasi alat terlarang.",
+    "s2Li2": "Beban web dihancurkan (Serangan cyber).",
+    "s2Li3": "Pembobolan keamanan log alat.",
+    "s3Title": "3. Pembatasan Penggunaan",
+    "s3Desc": "Pengembang PrettyPrint terbebas hasil output alat.",
+    "s4Title": "4. Kekayaan Harta Cerdik",
+    "s4Desc": "Semua Hak Kekayaan Terpelihara Untuk Saudara.",
+    "returnHome": "Kembali Awal Pusat"
+  }
+}

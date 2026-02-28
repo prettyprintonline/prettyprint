@@ -1,0 +1,191 @@
+{
+  "nav": {
+    "allFormats": "Todos los formatos",
+    "clientSide": "Solo en el cliente",
+    "starGithub": "Danos una estrella en GitHub"
+  },
+  "hero": {
+    "supportedLanguages": "26 idiomas compatibles",
+    "title1": "Embellece al instante",
+    "title2": "Cualquier código",
+    "subtitle": "Un formateador de código ultrarrápido y centrado en la privacidad para desarrolladores. Soporte para JSON, JavaScript, HTML, CSS y más de 20 lenguajes adicionales.",
+    "popular": "Popular:"
+  },
+  "features": {
+    "title": "¿Por qué elegir Pretty Print?",
+    "subtitle": "Diseñado para desarrolladores modernos que necesitan herramientas robustas, privadas e instantáneas.",
+    "astTitle": "AST Ultrarrápido",
+    "astDesc": "Utilizamos lógica estricta de Árboles de Sintaxis Abstracta (AST) integrada en analizadores de JavaScript de última generación, omitiendo el servidor y renderizando de inmediato.",
+    "privacyTitle": "Privacidad 100% en el cliente",
+    "privacyDesc": "Cero rastreo de datos. Cero cargas de datos remotos. Todos los cálculos de minificación y formateo se realizan de forma nativa dentro de su navegador.",
+    "themeTitle": "Temas y complementos de VS Code",
+    "themeDesc": "Disfruta de la lógica familiar de Intellisense a través del marco del editor Monaco, con resaltado de sintaxis de línea ondulada en tiempo real."
+  },
+  "topTools": {
+    "title": "Mejores herramientas de formateo",
+    "viewAll": "Ver los 26 formatos",
+    "formatterSuffix": "Formatteador"
+  },
+  "howItWorks": {
+    "title": "Cómo formatear código en línea",
+    "subtitle": "¿Cansado de líneas únicas desordenadas? Siga estos tres sencillos pasos para embellecer o minificar su código de forma totalmente gratuita.",
+    "step1Title": "Seleccionar idioma",
+    "step1Desc": "Elija de nuestra enorme biblioteca de 26 lenguajes compatibles, que van desde pilas de frontend (HTML, React, CSS) hasta estructuras de datos de backend (SQL, Python, JSON).",
+    "step2Title": "Pegar y formatear",
+    "step2Desc": "Suelte su bloque de texto minificado directamente en el panel del editor izquierdo. Tan pronto como pegue, nuestros procesadores AST validarán si hay errores de esquema y lo formatearán al instante.",
+    "step3Title": "Copiar o Minificar",
+    "step3Desc": "Use la barra de herramientas para copiar el documento bellamente estructurado, descargarlo directamente a una extensión de archivo, o incluso revertir el proceso para comprimir y minificar sus paquetes web!"
+  },
+  "tool": {
+    "whatIs": "Qué es",
+    "howTo": "Cómo Pretty Print",
+    "online": "Online",
+    "faqs": "Formatter — Preguntas Frecuentes",
+    "p1_1": "es una herramienta gratuita para formatear instantáneamente tu código",
+    "p1_2": "directamente en el navegador. 100% privado y sin servidores. Simplemente pega tu código no formateado",
+    "p1_3": ", presiona 'Formatear' y obtén un resultado limpio.",
+    "li1": "Navega a la página del",
+    "li1_2": "formateador.",
+    "li2": "Pega tu código desordenado",
+    "li2_2": "en el editor de arriba.",
+    "li3": "Haz clic en el botón",
+    "li3_1": "\"Format Code\"",
+    "li3_2": "para embellecer tu código instantáneamente.",
+    "li4": "Copia el resultado a tu portapapeles o descárgalo."
+  },
+  "footer": {
+    "description": "Formateador y embellecedor de código en línea gratuito. Su código nunca sale de su navegador.",
+    "home": "Inicio",
+    "privacy": "Privacidad",
+    "terms": "Términos"
+  },
+  "search": {
+    "placeholder": "Buscar un lenguaje (ej. JSON, SQL, Python)..."
+  },
+  "formatterCards": {
+    "json": "Imprimir JSON bonito: formatea, valida y embellece al instante.",
+    "javascript": "Formatea y sangra la sintaxis de código JavaScript y ES6+.",
+    "typescript": "Embellece archivos TypeScript con la alineación de tipado adecuada.",
+    "react": "Formatea componentes JSX/TSX de React estructuralmente.",
+    "html": "Sangra y organiza estructuras de documentos HTML5.",
+    "css": "Embellece hojas de estilo CSS con auto-sangría.",
+    "less": "Formatea declaraciones de hojas de estilo del preprocesador LESS.",
+    "scss": "Embellece estructuras anidadas SASS/SCSS al instante.",
+    "sql": "Formatea consultas SQL complejas en líneas legibles.",
+    "python": "Aplica la sangría del estilo PEP-8 para scripts de Python.",
+    "java": "Alinea correctamente las clases de Java y las llaves de método.",
+    "c": "Formatea archivos de código fuente C con estilo estándar K&R.",
+    "c++": "Embellece encabezados e implementaciones de C++.",
+    "c#": "Formatea archivos de código C# siguiendo las pautas de Microsoft.",
+    "php": "Sangra y embellece bloques de servidor PHP en el lado del servidor.",
+    "ruby": "Formatea gemas de Ruby y la lógica de script de la aplicación.",
+    "lua": "Embellece tablas Lua y bloques de funciones lógicas.",
+    "perl": "Formatea scripts Perl con alineación de llaves estándar.",
+    "xml": "Sangra etiquetas XML y datos de configuración anidados.",
+    "xaml": "Embellece el marcado XAML para definiciones de interfaz de usuario.",
+    "yaml": "Formatea archivos YAML con reglas de espaciado exactas.",
+    "graphql": "Formatea consultas GraphQL y definiciones de esquemas.",
+    "markdown": "Ordena el espaciado de Markdown y los elementos de la lista.",
+    "mdx": "Formatea archivos MDX mezclando Markdown y JSX.",
+    "babel": "Formatea la configuración de Babel y transforma archivos.",
+    "angular": "Embellece plantillas HTML y directivas de Angular."
+  },
+  "directory": {
+    "title": "Directorio Completo de Herramientas",
+    "subtitle": "Sea cual sea el lenguaje que hable, podemos leerlo. Todos los analizadores dependen de reglas de formato estándar de la industria, incluida la lógica AST."
+  },
+  "article": {
+    "title1": "El Formateador y Embellecedor",
+    "title2": "de Código en Línea Gratuito Definitivo",
+    "subtitle": "Pretty Print es la solución profesional para desarrolladores, diseñada para transformar código revuelto en cadenas perfectamente indentadas.",
+    "p1": "En el ciclo de vida de desarrollo de software moderno, los ingenieros interactúan constantemente con bloques lógicos comprimidos. Ya sea configurando una carga útil JSON, o revisando SQL, intentar analizar texto sin formato es un ejercicio frustrante.",
+    "p2": "Nuestra herramienta actúa como un centro universal para la estética del código base. No importa si está trabajando con plantillas HTML, hojas de estilo CSS o módulos de Python, Pretty Print embellece instantáneamente su código fuente.",
+    "privacyWhy": "Por Qué Importa la Privacidad",
+    "privacyP1": "La mayoría de herramientas envían su código sin formato a servidores remotos. Para los desarrolladores bajo estrictas políticas de privacidad, esto representa una vulnerabilidad de seguridad catastrófica.",
+    "privacyP2": "Pretty Print aprovecha WebAssembly del navegador nativo y los motores de script integrados. Sus secuencias de código patentadas son 100% privadas y nunca abandonan su partición del navegador.",
+    "techSpecs": "Especificaciones Técnicas",
+    "tsZero": "Cero Latencia",
+    "tsZeroDesc": "Análisis AST instantáneo en el hilo del navegador.",
+    "tsLangs": "26+ Idiomas",
+    "tsLangsDesc": "Soporte para React, SQL, JSON y más.",
+    "tsIDE": "Entorno IDE",
+    "tsIDEDesc": "Espacio de trabajo Monaco con temas de VS Code.",
+    "tsBi": "Bidireccional",
+    "tsBiDesc": "Cambia entre modos minificado y embellecido.",
+    "editorEngine": "Motor del Editor",
+    "privacyModel": "Modelo de Privacidad",
+    "advTools": "Herramientas de Productividad",
+    "advTools1": "Validaciones Intellisense",
+    "advTools1Desc": "Reconoce bucles, restricciones de llaves y etiquetas XML inválidas con subrayado en tiempo real.",
+    "advTools2": "Minificación Bidireccional",
+    "advTools2Desc": "Transforma archivos legibles de vuelta a estados de alta compresión mediante Terser y CSSNano."
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "subtitle": "Todo lo que necesita saber sobre nuestra herramienta de formato."
+  },
+  "faqItems": [
+    {
+      "question": "¿Qué es Pretty Print?",
+      "answer": "Pretty Print es un formateador y embellecedor de código gratuito en línea que admite más de 25 lenguajes de programación. Formatea de forma instantánea el código desordenado o no legible y lo convierte en un formato limpio, tabulado y legible para humanos, todo directamente en el navegador."
+    },
+    {
+      "question": "¿Es Pretty Print de uso gratuito?",
+      "answer": "Sí, Pretty Print es 100% gratuito sin registro, sin límites y sin anuncios. Puede formatear código ilimitado sin costo."
+    },
+    {
+      "question": "¿Está seguro mi código al utilizar Pretty Print?",
+      "answer": "Por supuesto. Pretty Print procesa todo un 100% en el lado del cliente utilizando JavaScript. Su código jamás sale de su dispositivo ni se carga en un servidor externo."
+    },
+    {
+      "question": "¿Qué lenguajes de programación admite Pretty Print?",
+      "answer": "Admite más de 25 lenguajes: JSON, JavaScript, TypeScript, HTML, CSS, SQL, Python, Java, C, C++, C#, PHP, Ruby, Lua, Perl, XML, XAML, YAML, GraphQL, Markdown, MDX, Babel, React y Angular."
+    },
+    {
+      "question": "¿Cómo funciona Pretty Print?",
+      "answer": "Simplemente seleccione su lenguaje, pegue su código desordenado y presione 'Dar formato a código'. Así de simple."
+    },
+    {
+      "question": "¿Tengo que instalar algo para utilizar Pretty Print?",
+      "answer": "No, Pretty Print se ejecuta en su navegador. No hace falta descargar, instalar ni configurar absolutamente nada."
+    }
+  ],
+  "privacy": {
+    "badge": "Privacidad Primero",
+    "title": "Política de Privacidad",
+    "subtitle": "La transparencia es fundamental. Como tu código nunca sale de tu navegador, tu privacidad está integrada en la arquitectura.",
+    "box1Title": "100% Lado del Cliente",
+    "box1Desc": "Procesamos todo dentro de tu navegador web usando JavaScript. Tus datos nunca se transmiten a nuestros servidores.",
+    "box2Title": "Sin Registros de Datos",
+    "box2Desc": "Al no tener una capa de procesamiento backend, no podemos registrar tus peticiones de formato. Lo que pegas es solo para tus ojos.",
+    "s1Title": "1. Información que Recopilamos",
+    "s1Desc": "Buscamos la mínima recolección de datos. No requerimos creación de cuenta y no almacenamos tu código.",
+    "s1Li1": "Usamos Local Storage para guardar configuraciones del editor (tema, espaciado).",
+    "s1Li2": "Registros estándar del servidor web (IP, tipo de navegador) para seguridad y analíticas.",
+    "s2Title": "2. Servicios de Terceros",
+    "s2Desc": "Podemos usar herramientas como Google Analytics para entender el tráfico. Pero tu código NUNCA se comparte.",
+    "s3Title": "3. Seguridad",
+    "s3Desc": "La seguridad es nuestra principal característica. Al eliminar el tránsito de tu código eliminamos los riesgos primarios.",
+    "s4Title": "4. Actualizaciones",
+    "s4Desc": "Esta política puede actualizarse periódicamente. Última actualización: Febrero 2026.",
+    "s4Footer": "Si tienes preguntas, contáctanos vía GitHub.",
+    "returnHome": "Volver a Inicio"
+  },
+  "terms": {
+    "badge": "Directrices de Uso",
+    "title": "Términos de Servicio",
+    "subtitle": "Al usar Pretty Print, aceptas estos simples términos para mantener el servicio gratis y rápido.",
+    "s1Title": "1. Aceptación",
+    "s1Desc": "Al acceder a nuestro sitio web, aceptas estar regido por estos términos. El servicio se ofrece 'tal cual'.",
+    "s2Title": "2. Uso Permitido",
+    "s2Desc": "Eres libre de usar la herramienta para propósitos personales o comerciales. Sin embargo, no debes:",
+    "s2Li1": "Usar el servicio para actividades ilegales.",
+    "s2Li2": "Intentar hacer scraping o ataques DDoS al servidor.",
+    "s2Li3": "Evadir medidas de seguridad o límites de tasa.",
+    "s3Title": "3. Limitación de Responsabilidad",
+    "s3Desc": "No somos responsables por ningún error de formato o pérdida de datos. Verifica siempre tu código crítico antes de usarlo.",
+    "s4Title": "4. Propiedad Intelectual",
+    "s4Desc": "No reclamamos derechos sobre el código que subes. Sigue siendo tu propiedad intelectual.",
+    "returnHome": "Volver a Inicio"
+  }
+}

@@ -1,14 +1,21 @@
 import Link from "next/link";
 import { ModeToggle } from "./mode-toggle";
-import { Code2, ChevronDown } from "lucide-react";
+import { Code2, ChevronDown, Github } from "lucide-react";
 import { Button } from "./ui/button";
+import { LanguageSwitcher } from "./language-switcher";
+import { getLocalizedHref } from "@/lib/locale-navigation";
 
-export function Navbar() {
+export function Navbar({ dict, locale }: { dict?: any; locale?: string }) {
+    const t = dict?.nav || {
+        allFormats: "All Formats",
+        clientSide: "Client-Side Only",
+        starGithub: "Star us on GitHub"
+    };
     return (
         <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60 transition-all duration-300">
             <div className="container px-4 flex h-16 max-w-screen-xl items-center justify-between mx-auto">
                 <div className="flex items-center gap-8">
-                    <Link href="/" className="flex items-center gap-2.5 group transition-all" title="Pretty Print — Free Online Code Formatter">
+                    <Link href={getLocalizedHref("/", locale)} className="flex items-center gap-2.5 group transition-all" title="Pretty Print — Free Online Code Formatter">
                         <div className="bg-primary text-primary-foreground p-2 rounded-xl shadow-lg shadow-primary/20 group-hover:scale-105 transition-transform duration-300">
                             <Code2 className="h-5 w-5" />
                         </div>
@@ -32,7 +39,7 @@ export function Navbar() {
                         ].map((item) => (
                             <Link
                                 key={item.name}
-                                href={item.href}
+                                href={getLocalizedHref(item.href, locale)}
                                 className="px-4 py-2 rounded-lg hover:bg-muted/50 transition-colors relative group"
                             >
                                 {item.name}
@@ -44,14 +51,21 @@ export function Navbar() {
 
                 <div className="flex items-center gap-3">
                     <Link
-                        href="/#all-languages"
+                        href={getLocalizedHref("/#all-languages", locale)}
                         className="hidden md:flex items-center gap-1 px-4 py-2 rounded-lg hover:bg-muted/50 transition-colors text-sm font-medium text-muted-foreground hover:text-foreground"
                     >
-                        All Formats
+                        {t.allFormats}
                         <ChevronDown className="w-3.5 h-3.5 opacity-50" />
                     </Link>
+                    <Link href="https://github.com/prettyprintonline/prettyprint" target="_blank" rel="noopener noreferrer">
+                        <Button variant="ghost" size="icon" className="hover:bg-muted/50 transition-colors" title={t.starGithub}>
+                            <Github className="h-5 w-5" />
+                            <span className="sr-only">GitHub</span>
+                        </Button>
+                    </Link>
+                    <LanguageSwitcher />
                     <div className="hidden sm:flex items-center h-8 px-3 rounded-full bg-emerald-500/10 text-emerald-400 text-[10px] font-bold border border-emerald-500/20 uppercase tracking-wider animate-pulse mr-2">
-                        Client-Side Only
+                        {t.clientSide}
                     </div>
                 </div>
             </div>
