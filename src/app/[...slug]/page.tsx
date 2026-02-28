@@ -51,17 +51,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: 'Not Found' };
 }
 
-// Allow on-demand rendering for paths not in generateStaticParams
-export const dynamicParams = true;
-
 export async function generateStaticParams() {
     const paths: { slug: string[] }[] = [];
+    const locales = i18n.locales.filter(l => l !== "en");
 
-    // Only pre-render English tool pages at build time to stay within
-    // Cloudflare Pages' 20,000 file deployment limit.
-    // Localized pages are rendered on-demand at the edge and cached.
+    // 1. Translated Homepages (/es, /fr, etc.)
+    for (const locale of locales) {
+        paths.push({ slug: [locale] });
+    }
+
+    // 2. English Tool Pages (/json, /javascript, etc.)
     for (const tool of LANGUAGES_SEO) {
         paths.push({ slug: [tool.id] });
+    }
+
+    // 3. Translated Tool / Static Pages (/es/json, /es/privacy, etc.)
+    for (const locale of locales) {
+        paths.push({ slug: [locale, "privacy"] });
+        paths.push({ slug: [locale, "terms"] });
+        for (const tool of LANGUAGES_SEO) {
+            paths.push({ slug: [locale, tool.id] });
+        }
     }
 
     return paths;
