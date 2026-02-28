@@ -49,6 +49,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // 3. Translated Tool Pages
     for (const locale of locales) {
+        sm.push({
+            url: `${BASE}/${locale}/privacy`,
+            lastModified: new Date(),
+            changeFrequency: "monthly" as const,
+            priority: 0.4,
+        });
+        sm.push({
+            url: `${BASE}/${locale}/terms`,
+            lastModified: new Date(),
+            changeFrequency: "monthly" as const,
+            priority: 0.4,
+        });
         for (const tool of LANGUAGES_SEO) {
             sm.push({
                 url: `${BASE}/${locale}/${encodeURIComponent(tool.id)}`,
