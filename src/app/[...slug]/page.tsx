@@ -54,9 +54,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 // Allow on-demand rendering for paths not in generateStaticParams
 export const dynamicParams = true;
 
-// Edge runtime for Cloudflare Workers compatibility
-export const runtime = "edge";
-
 export async function generateStaticParams() {
     const paths: { slug: string[] }[] = [];
 
