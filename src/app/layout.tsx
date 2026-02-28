@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     description: "Format and beautify your code instantly with our 100% client-side tool. No data ever leaves your browser.",
     images: [
       {
-        url: "/og-image.png",
+        url: "/favicon.svg",
         width: 1200,
         height: 630,
         alt: "Pretty Print - Code Formatter",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Pretty Print — Privacy-First Code Beautifier",
     description: "Instant formatting for 25+ languages. Fast, private, and free.",
-    images: ["/og-image.png"],
+    images: ["/favicon.svg"],
   },
   icons: {
     icon: "/favicon.svg",
