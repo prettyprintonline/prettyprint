@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useRef, useEffect } from "react";
+import { useState, useCallback, useRef, useEffect, useMemo } from "react";
 import {
     Copy,
     Download,
@@ -383,7 +383,7 @@ export function LanguageEditorClient({
 
         return (
             <div
-                className={`flex flex-col min-h-0 ${isFullscreen ? "fixed inset-0 z-[100] bg-background" : ""
+                className={`editor-panel flex flex-col min-h-0 overflow-hidden ${isFullscreen ? "fixed inset-0 z-[100] bg-background" : ""
                     }`}
                 style={
                     !isFullscreen
@@ -633,13 +633,18 @@ export function LanguageEditorClient({
                     {renderPanel("input", fullscreenPanel === "input")}
 
                     {!fullscreenPanel && (
-                        <div
-                            className="hidden md:flex items-center justify-center w-1.5 cursor-col-resize group hover:bg-emerald-500/10 transition-colors relative shrink-0 select-none"
-                            onMouseDown={handleMouseDown}
-                        >
-                            <div className="absolute inset-y-0 -left-1 -right-1 z-10" />
-                            <div className="w-0.5 h-8 rounded-full bg-border/60 group-hover:bg-emerald-500/60 transition-colors" />
-                        </div>
+                        <>
+                            {/* Mobile horizontal divider */}
+                            <div className="md:hidden w-full h-px bg-border/50 shrink-0" />
+                            {/* Desktop vertical resize handle */}
+                            <div
+                                className="hidden md:flex items-center justify-center w-1.5 cursor-col-resize group hover:bg-emerald-500/10 transition-colors relative shrink-0 select-none"
+                                onMouseDown={handleMouseDown}
+                            >
+                                <div className="absolute inset-y-0 -left-1 -right-1 z-10" />
+                                <div className="w-0.5 h-8 rounded-full bg-border/60 group-hover:bg-emerald-500/60 transition-colors" />
+                            </div>
+                        </>
                     )}
 
                     {renderPanel("output", fullscreenPanel === "output")}
