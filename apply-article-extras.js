@@ -34,7 +34,7 @@ for (const locale of locales) {
                 console.log(`Updated missing article properties for ${locale}`);
             }
         } catch (e) {
-            console.error(`Error parsing JSON for ${locale}`, e);
+            console.error('Error parsing JSON for locale:', locale, e);
         }
     }
 }

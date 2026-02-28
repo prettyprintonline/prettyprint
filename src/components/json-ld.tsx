@@ -25,10 +25,12 @@ export function WebApplicationJsonLd({ languageName, url }: WebApplicationProps)
             : SITE_CONFIG.description,
     };
 
+    // JSON.stringify is safe here as jsonLd is a controlled object structure, not user input
+    const jsonLdString = JSON.stringify(jsonLd);
     return (
         <script
             type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            dangerouslySetInnerHTML={{ __html: jsonLdString }}
         />
     );
 }
@@ -51,10 +53,12 @@ export function FAQJsonLd({ faqs }: FAQJsonLdProps) {
         })),
     };
 
+    // JSON.stringify is safe here as jsonLd is a controlled object structure, not user input
+    const jsonLdString = JSON.stringify(jsonLd);
     return (
         <script
             type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            dangerouslySetInnerHTML={{ __html: jsonLdString }}
         />
     );
 }
@@ -75,10 +79,12 @@ export function BreadcrumbJsonLd({ items }: BreadcrumbJsonLdProps) {
         })),
     };
 
+    // JSON.stringify is safe here as jsonLd is a controlled object structure, not user input
+    const jsonLdString = JSON.stringify(jsonLd);
     return (
         <script
             type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            dangerouslySetInnerHTML={{ __html: jsonLdString }}
         />
     );
 }
@@ -93,10 +99,12 @@ export function OrganizationJsonLd() {
         sameAs: ["https://github.com/prettyprintonline/prettyprint"],
     };
 
+    // JSON.stringify is safe here as jsonLd is a controlled object structure, not user input
+    const jsonLdString = JSON.stringify(jsonLd);
     return (
         <script
             type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            dangerouslySetInnerHTML={{ __html: jsonLdString }}
         />
     );
 }

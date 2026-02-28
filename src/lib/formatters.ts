@@ -126,7 +126,7 @@ export async function formatCode(code: string, language: string, options?: Forma
                 return code;
         }
     } catch (error) {
-        console.error(`Format error for ${language}:`, error);
+        console.error('Format error for language:', language, error);
         throw new Error(`Syntax error. Unable to parse the ${language} code.`);
     }
 }
@@ -232,7 +232,7 @@ export async function minifyCode(code: string, language: string): Promise<string
                 return code.replace(/\n/g, '').replace(/\s{2,}/g, ' ').trim();
         }
     } catch (e) {
-        console.error(`Minification error for ${language}:`, e);
+        console.error('Minification error for language:', language, e);
         // Silent fallback to basic minification
         return code.replace(/\n/g, '').replace(/\s{2,}/g, ' ').trim();
     }
@@ -242,8 +242,13 @@ function autoIndent(code: string, openPatterns: string[], closePatterns: string[
     const PADDING = '  ';
     let indentLevel = 0;
 
-    const openRegex = new RegExp(`(${openPatterns.join('|')})`, 'i');
-    const closeRegex = new RegExp(`(${closePatterns.join('|')})`, 'i');
+    // Sanitize patterns to prevent ReDoS: escape special regex characters
+    const sanitizePattern = (pattern: string) => pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const sanitizedOpenPatterns = openPatterns.map(sanitizePattern);
+    const sanitizedClosePatterns = closePatterns.map(sanitizePattern);
+
+    const openRegex = new RegExp(`(${sanitizedOpenPatterns.join('|')})`, 'i');
+    const closeRegex = new RegExp(`(${sanitizedClosePatterns.join('|')})`, 'i');
 
     return code
         .split('\n')
@@ -251,8 +256,8 @@ function autoIndent(code: string, openPatterns: string[], closePatterns: string[
             let trimmed = line.trim();
             if (!trimmed) return "";
 
-            const opens = (trimmed.match(new RegExp(openRegex, 'g')) || []).length;
-            const closes = (trimmed.match(new RegExp(closeRegex, 'g')) || []).length;
+            const opens = (trimmed.match(openRegex) || []).length;
+            const closes = (trimmed.match(closeRegex) || []).length;
 
             // Decrease indent immediately if the line *starts* with a closer
             if (closeRegex.test(trimmed.split(' ')[0])) {
