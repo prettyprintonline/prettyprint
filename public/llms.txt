@@ -1,0 +1,48 @@
+# Pretty Print — Free Online Code Formatter & Beautifier
+
+> Pretty Print is a free, privacy-first, 100% client-side code formatter and beautifier supporting 26+ programming languages. No data ever leaves the browser.
+
+## About
+Pretty Print (https://prettyprint.online) is a professional-grade online tool that formats, beautifies, validates, and minifies source code instantly — entirely within the user's browser. It uses AST-based parsing and industry-standard formatting engines like Prettier, sql-formatter, and js-beautify.
+
+## Key Features
+- 26+ supported languages: JavaScript, TypeScript, JSON, HTML, CSS, SQL, Python, XML, YAML, React, Angular, GraphQL, C, C++, C#, Java, PHP, Ruby, Lua, Perl, Markdown, MDX, SCSS, LESS, XAML, Babel
+- 100% client-side processing — code never leaves the browser
+- Monaco Editor (VS Code engine) with IntelliSense, syntax highlighting, and real-time error detection
+- Code beautification, minification, and validation
+- Multiple output views: Code, Tree, Form, Preview, Metrics
+- Dark theme with responsive design
+- Available in 13 languages: English, Spanish, French, German, Chinese, Hindi, Portuguese, Russian, Indonesian, Japanese, Arabic, Bengali, Urdu
+
+## Use Cases
+- Developers formatting messy or minified code
+- API response beautification (JSON, XML, GraphQL)
+- Code review preparation
+- Learning and teaching programming
+- Quick syntax validation
+
+## Links
+- Homepage: https://prettyprint.online
+- JSON Formatter: https://prettyprint.online/json
+- JavaScript Formatter: https://prettyprint.online/javascript
+- HTML Formatter: https://prettyprint.online/html
+- CSS Formatter: https://prettyprint.online/css
+- SQL Formatter: https://prettyprint.online/sql
+- Python Formatter: https://prettyprint.online/python
+- XML Formatter: https://prettyprint.online/xml
+- TypeScript Formatter: https://prettyprint.online/typescript
+- YAML Formatter: https://prettyprint.online/yaml
+- React Formatter: https://prettyprint.online/react
+- GitHub Repository: https://github.com/prettyprintonline/prettyprint
+- Privacy Policy: https://prettyprint.online/privacy
+- Terms of Service: https://prettyprint.online/terms
+
+## Pricing
+Free — no account required, no data collection, no rate limits.
+
+## Technical Stack
+- Framework: Next.js 16 (App Router)
+- Editor: Microsoft Monaco Editor
+- Formatting: Prettier, sql-formatter, js-beautify, vkBeautify
+- Hosting: Cloudflare Pages (global edge network)
+- Privacy: Zero server-side processing, zero telemetry on user code

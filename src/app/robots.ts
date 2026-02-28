@@ -8,6 +8,39 @@ export default function robots(): MetadataRoute.Robots {
                 userAgent: "*",
                 allow: "/",
             },
+            // Explicitly allow major AI crawlers for AI SEO / GEO
+            {
+                userAgent: "GPTBot",
+                allow: "/",
+            },
+            {
+                userAgent: "ChatGPT-User",
+                allow: "/",
+            },
+            {
+                userAgent: "Google-Extended",
+                allow: "/",
+            },
+            {
+                userAgent: "PerplexityBot",
+                allow: "/",
+            },
+            {
+                userAgent: "ClaudeBot",
+                allow: "/",
+            },
+            {
+                userAgent: "Applebot-Extended",
+                allow: "/",
+            },
+            {
+                userAgent: "Bytespider",
+                allow: "/",
+            },
+            {
+                userAgent: "anthropic-ai",
+                allow: "/",
+            },
         ],
         sitemap: `${SITE_CONFIG.domain}/sitemap.xml`,
     };

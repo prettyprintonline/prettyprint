@@ -90,7 +90,7 @@ export function OrganizationJsonLd() {
         name: SITE_CONFIG.name,
         url: SITE_CONFIG.domain,
         logo: `${SITE_CONFIG.domain}/icon.png`,
-        sameAs: [],
+        sameAs: ["https://github.com/prettyprintonline/prettyprint"],
     };
 
     return (
